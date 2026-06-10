@@ -4,6 +4,8 @@ const palavras = [
   "Next.js",
   "TypeScript",
   "Node.js",
+  "SEO",
+  "Docker",
 ];
 
 const typing = document.getElementById("typing");
@@ -80,6 +82,12 @@ if (carousel && dotsContainer) {
       slideAtual = i;
       atualizarCarousel();
       reiniciarIntervalo();
+
+      enviarEventoAnalytics(
+        "clique_dot_carrossel",
+        "Projeto LG Trambicagens",
+        `Imagem ${i + 1}`,
+      );
     });
 
     dotsContainer.appendChild(dot);
@@ -111,6 +119,12 @@ function mudarSlide(direcao) {
 
   atualizarCarousel();
   reiniciarIntervalo();
+
+  enviarEventoAnalytics(
+    "clique_carrossel",
+    "Projeto LG Trambicagens",
+    direcao > 0 ? "Próxima imagem" : "Imagem anterior",
+  );
 }
 
 function iniciarIntervalo() {
@@ -123,5 +137,23 @@ function reiniciarIntervalo() {
   clearInterval(intervaloCarousel);
   iniciarIntervalo();
 }
+
+function enviarEventoAnalytics(nomeEvento, categoria, rotulo) {
+  if (typeof gtag === "function") {
+    gtag("event", nomeEvento, {
+      event_category: categoria,
+      event_label: rotulo,
+    });
+  }
+}
+
+document.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    const texto = link.textContent.trim();
+    const href = link.getAttribute("href");
+
+    enviarEventoAnalytics("clique_link", "Links do portfólio", texto || href);
+  });
+});
 
 window.mudarSlide = mudarSlide;

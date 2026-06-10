@@ -1,18 +1,32 @@
 # Portfólio - Luiz Gustavo
 
-Portfólio profissional criado para apresentar minhas habilidades, tecnologias, projetos e currículo.
+Portfólio profissional criado para apresentar minhas habilidades, tecnologias, projetos, currículo, conhecimentos em SEO, meta tags e Google Analytics.
 
 ## Sobre o projeto
 
 Este projeto foi desenvolvido com HTML, CSS, JavaScript, Markdown, Docker e Nginx.
 
-A página principal apresenta minhas informações profissionais, tecnologias que utilizo, projetos desenvolvidos e formas de contato.
+A página principal apresenta minhas informações profissionais, tecnologias que utilizo, projetos desenvolvidos, formas de contato e uma explicação sobre meta tags de SEO, meta tags de redes sociais e Google Analytics.
 
 O projeto também contém um currículo em Markdown e pode ser executado com Docker.
 
 ## Objetivo
 
 Criar uma apresentação profissional para divulgar meus conhecimentos como Desenvolvedor Full Stack Júnior.
+
+O portfólio também demonstra conhecimentos básicos importantes para publicação de sites, como:
+
+- Estrutura HTML organizada
+- Estilização com CSS
+- Responsividade
+- Animações com JavaScript
+- Carrossel de imagens
+- Meta tags de SEO
+- Meta tags para redes sociais
+- Google Analytics
+- Docker
+- Nginx
+- Markdown
 
 ## Tecnologias utilizadas
 
@@ -34,10 +48,15 @@ Funcionalidades principais:
 - Cadastro de usuários
 - Login com autenticação
 - Validação de dados no backend
+- Verificação de email
 - Cadastro de produtos
 - Upload de imagens
+- Listagem e pesquisa de produtos
+- Página individual de produto
 - Carrinho de compras
+- Checkout
 - Sistema de pedidos
+- Histórico de compras
 - Perfil do usuário
 - Favoritos
 - Cupons
@@ -45,97 +64,72 @@ Funcionalidades principais:
 - Painel administrativo
 - Tema claro e escuro
 
-## O que este portfólio demonstra
+## SEO e Meta Tags
 
-- Organização de arquivos em um projeto web
-- Criação de interface responsiva
-- Uso de JavaScript para animações e carrossel
-- Apresentação de projeto real
-- Uso de Docker para executar o site
-- Criação de currículo em Markdown
+O projeto utiliza meta tags para melhorar a identificação do site por mecanismos de busca e redes sociais.
 
-## Estrutura do projeto
+Foram adicionadas meta tags como:
+
+- `description`
+- `keywords`
+- `author`
+- `robots`
+- `theme-color`
+- `canonical`
+- Open Graph
+- Twitter Card
+- JSON-LD
+
+## Para que servem as meta tags de SEO?
+
+As meta tags de SEO ajudam mecanismos de busca, como o Google, a entenderem o conteúdo da página.
+
+Elas podem informar:
+
+- Título da página
+- Descrição do site
+- Autor
+- Palavras-chave
+- Permissão para indexação
+- Link principal da página
+- Tema visual do navegador
+
+## Para que servem as meta tags de rede social?
+
+As meta tags de rede social melhoram a aparência do link quando o site é compartilhado em redes como:
+
+- WhatsApp
+- LinkedIn
+- Facebook
+- Twitter / X
+
+Elas permitem mostrar:
+
+- Título personalizado
+- Descrição
+- Imagem de destaque
+- Link do site
+- Nome do site
+
+## Google Analytics
+
+O Google Analytics foi preparado no projeto para acompanhar informações como:
+
+- Quantidade de visitas
+- Origem dos visitantes
+- Páginas acessadas
+- Cliques em links
+- Cliques no carrossel
+- Cliques em currículo
+- Cliques em GitHub
+- Cliques em LinkedIn
+- Cliques em email
+- Cliques em telefone
+
+## Importante sobre o Google Analytics
+
+No arquivo `index.html`, troque:
 
 ```txt
-curriculo-luiz/
-├── index.html
-├── curriculo.md
-├── README.md
-├── Dockerfile
-├── .dockerignore
-├── css/
-│   └── style.css
-├── js/
-│   └── script.js
-└── img/
-    ├── lg-trambicagens-1.png
-    ├── lg-trambicagens-2.png
-    ├── lg-trambicagens-3.png
-    ├── lg-trambicagens-4.png
-    ├── lg-trambicagens-5.png
-    ├── lg-trambicagens-6.png
-    ├── lg-trambicagens-7.png
-    ├── lg-trambicagens-8.png
-    ├── lg-trambicagens-9.png
-    └── lg-trambicagens-10.png
+G-XXXXXXXXXX
 ```
-
-## Como rodar sem Docker
-
-Abra o arquivo `index.html` diretamente no navegador.
-
-## Como rodar com Docker
-
-Entre na pasta do projeto:
-
-```bash
-cd "C:\Users\Luiz Gustavo\Desktop\curriculo-luiz"
-```
-
-Crie a imagem Docker:
-
-```bash
-docker build -t portfolio-luiz .
-```
-
-Rode o container:
-
-```bash
-docker run -d -p 8080:80 --name portfolio-luiz portfolio-luiz
-```
-
-Acesse no navegador:
-
-```txt
-http://localhost:8080
-```
-
-## Como parar o container
-
-```bash
-docker stop portfolio-luiz
-```
-
-## Como remover o container
-
-```bash
-docker rm portfolio-luiz
-```
-
-## Recriar o container depois de alterações
-
-```bash
-docker stop portfolio-luiz
-docker rm portfolio-luiz
-docker build -t portfolio-luiz .
-docker run -d -p 8080:80 --name portfolio-luiz portfolio-luiz
-```
-
-## Autor
-
-Luiz Gustavo  
-Desenvolvedor Full Stack Júnior
-
-GitHub: https://github.com/luizgus1213  
-LinkedIn: https://www.linkedin.com/in/luiz-gustavo-66a3b93a0  
-Email: luizgus397@gmail.com
