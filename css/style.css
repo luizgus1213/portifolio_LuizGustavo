@@ -112,7 +112,51 @@ section {
   padding: 95px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
+.hello {
+  font-size: 22px;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
 
+.emoji {
+  display: inline-block;
+  animation: wave 1.6s infinite;
+  transform-origin: 70% 70%;
+}
+
+.hero h1 span {
+  color: var(--orange);
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  15% {
+    transform: rotate(15deg);
+  }
+
+  30% {
+    transform: rotate(-10deg);
+  }
+
+  45% {
+    transform: rotate(15deg);
+  }
+
+  60% {
+    transform: rotate(-6deg);
+  }
+
+  75% {
+    transform: rotate(8deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
 .hero {
   min-height: 100vh;
   display: flex;
