@@ -59,14 +59,26 @@ function revelarNaTela() {
 window.addEventListener("scroll", revelarNaTela);
 revelarNaTela();
 
-const carousel = document.getElementById("lgCarousel");
-const dotsContainer = document.getElementById("lgDots");
-const totalSlides = 10;
+const carrosseis = {};
 
-let slideAtual = 0;
-let intervaloCarousel;
+function configurarCarousel(nome, trackId, dotsId, tituloProjeto) {
+  const track = document.getElementById(trackId);
+  const dotsContainer = document.getElementById(dotsId);
 
-if (carousel && dotsContainer) {
+  if (!track || !dotsContainer) return;
+
+  const imagens = track.querySelectorAll("img");
+  const totalSlides = imagens.length;
+
+  carrosseis[nome] = {
+    track,
+    dotsContainer,
+    totalSlides,
+    slideAtual: 0,
+    intervalo: null,
+    tituloProjeto,
+  };
+
   for (let i = 0; i < totalSlides; i++) {
     const dot = document.createElement("button");
 
@@ -79,13 +91,13 @@ if (carousel && dotsContainer) {
     }
 
     dot.addEventListener("click", () => {
-      slideAtual = i;
-      atualizarCarousel();
-      reiniciarIntervalo();
+      carrosseis[nome].slideAtual = i;
+      atualizarCarousel(nome);
+      reiniciarIntervalo(nome);
 
       enviarEventoAnalytics(
         "clique_dot_carrossel",
-        "Projeto LG Trambicagens",
+        tituloProjeto,
         `Imagem ${i + 1}`,
       );
     });
@@ -93,49 +105,68 @@ if (carousel && dotsContainer) {
     dotsContainer.appendChild(dot);
   }
 
-  iniciarIntervalo();
+  iniciarIntervalo(nome);
 }
 
-function atualizarCarousel() {
+function atualizarCarousel(nome) {
+  const carousel = carrosseis[nome];
+
   if (!carousel) return;
 
-  carousel.style.transform = `translateX(-${slideAtual * 100}%)`;
+  carousel.track.style.transform = `translateX(-${carousel.slideAtual * 100}%)`;
 
-  document.querySelectorAll(".carousel-dot").forEach((dot, index) => {
-    dot.classList.toggle("active", index === slideAtual);
-  });
+  carousel.dotsContainer
+    .querySelectorAll(".carousel-dot")
+    .forEach((dot, index) => {
+      dot.classList.toggle("active", index === carousel.slideAtual);
+    });
 }
 
-function mudarSlide(direcao) {
-  slideAtual += direcao;
+function mudarSlide(nome, direcao, origem = "botao") {
+  const carousel = carrosseis[nome];
 
-  if (slideAtual < 0) {
-    slideAtual = totalSlides - 1;
+  if (!carousel) return;
+
+  carousel.slideAtual += direcao;
+
+  if (carousel.slideAtual < 0) {
+    carousel.slideAtual = carousel.totalSlides - 1;
   }
 
-  if (slideAtual >= totalSlides) {
-    slideAtual = 0;
+  if (carousel.slideAtual >= carousel.totalSlides) {
+    carousel.slideAtual = 0;
   }
 
-  atualizarCarousel();
-  reiniciarIntervalo();
+  atualizarCarousel(nome);
 
-  enviarEventoAnalytics(
-    "clique_carrossel",
-    "Projeto LG Trambicagens",
-    direcao > 0 ? "Próxima imagem" : "Imagem anterior",
-  );
+  if (origem !== "auto") {
+    reiniciarIntervalo(nome);
+
+    enviarEventoAnalytics(
+      "clique_carrossel",
+      carousel.tituloProjeto,
+      direcao > 0 ? "Próxima imagem" : "Imagem anterior",
+    );
+  }
 }
 
-function iniciarIntervalo() {
-  intervaloCarousel = setInterval(() => {
-    mudarSlide(1);
+function iniciarIntervalo(nome) {
+  const carousel = carrosseis[nome];
+
+  if (!carousel) return;
+
+  carousel.intervalo = setInterval(() => {
+    mudarSlide(nome, 1, "auto");
   }, 3500);
 }
 
-function reiniciarIntervalo() {
-  clearInterval(intervaloCarousel);
-  iniciarIntervalo();
+function reiniciarIntervalo(nome) {
+  const carousel = carrosseis[nome];
+
+  if (!carousel) return;
+
+  clearInterval(carousel.intervalo);
+  iniciarIntervalo(nome);
 }
 
 function enviarEventoAnalytics(nomeEvento, categoria, rotulo) {
@@ -155,5 +186,9 @@ document.querySelectorAll("a").forEach((link) => {
     enviarEventoAnalytics("clique_link", "Links do portfólio", texto || href);
   });
 });
+
+configurarCarousel("lg", "lgCarousel", "lgDots", "Projeto LG Trambicagens");
+
+configurarCarousel("vf", "vfCarousel", "vfDots", "Projeto VendaFácil Pro");
 
 window.mudarSlide = mudarSlide;

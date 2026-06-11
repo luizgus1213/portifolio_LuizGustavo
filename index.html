@@ -317,7 +317,6 @@
           </div>
         </div>
       </section>
-
       <section id="projetos">
         <div class="container reveal">
           <div class="section-title">
@@ -384,7 +383,7 @@
                 <button
                   class="carousel-btn prev"
                   type="button"
-                  onclick="mudarSlide(-1)"
+                  onclick="mudarSlide('lg', -1)"
                   aria-label="Imagem anterior"
                 >
                   ‹
@@ -393,7 +392,7 @@
                 <button
                   class="carousel-btn next"
                   type="button"
-                  onclick="mudarSlide(1)"
+                  onclick="mudarSlide('lg', 1)"
                   aria-label="Próxima imagem"
                 >
                   ›
@@ -434,6 +433,159 @@
                   <span class="tag">Sequelize</span>
                   <span class="tag">JWT</span>
                   <span class="tag">Docker</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="project-img carousel">
+                <div class="carousel-track" id="vfCarousel">
+                  <img
+                    src="img/vendafacil-1.png"
+                    alt="Tela de login do sistema VendaFácil Pro"
+                  />
+
+                  <img
+                    src="img/vendafacil-2.png"
+                    alt="Tela de criação de conta do sistema VendaFácil Pro"
+                  />
+
+                  <img
+                    src="img/vendafacil-3.png"
+                    alt="Painel principal de vendas do VendaFácil Pro"
+                  />
+
+                  <img
+                    src="img/vendafacil-4.png"
+                    alt="Tela de registro de venda do VendaFácil Pro"
+                  />
+
+                  <img
+                    src="img/vendafacil-5.png"
+                    alt="Tela de produção do VendaFácil Pro"
+                  />
+
+                  <img
+                    src="img/vendafacil-6.png"
+                    alt="Tela de estoque do VendaFácil Pro"
+                  />
+
+                  <img
+                    src="img/vendafacil-7.png"
+                    alt="Tela financeira do VendaFácil Pro"
+                  />
+
+                  <img
+                    src="img/vendafacil-8.png"
+                    alt="Tela de cadastro de produto do VendaFácil Pro"
+                  />
+
+                  <img
+                    src="img/vendafacil-9.png"
+                    alt="Tela de venda com produtos do VendaFácil Pro"
+                  />
+                </div>
+
+                <button
+                  class="carousel-btn prev"
+                  type="button"
+                  onclick="mudarSlide('vf', -1)"
+                  aria-label="Imagem anterior"
+                >
+                  ‹
+                </button>
+
+                <button
+                  class="carousel-btn next"
+                  type="button"
+                  onclick="mudarSlide('vf', 1)"
+                  aria-label="Próxima imagem"
+                >
+                  ›
+                </button>
+
+                <div class="carousel-dots" id="vfDots"></div>
+              </div>
+
+              <div class="project-content">
+                <h3>VendaFácil Pro</h3>
+
+                <p>
+                  Sistema de gestão de vendas desenvolvido com foco em controle,
+                  segurança e organização. O projeto possui módulos de vendas,
+                  produção, estoque e financeiro, com autenticação, criação de
+                  conta, cadastro de produtos, controle de pedidos e validações
+                  no backend.
+                </p>
+
+                <ul>
+                  <li>Login e criação de conta de administrador</li>
+                  <li>Autenticação com cookie HTTPOnly</li>
+                  <li>
+                    Registro de vendas com cliente, produto, forma de pagamento
+                    e data de retirada
+                  </li>
+                  <li>
+                    Controle de status do pedido: pendente, pago, entregue e
+                    cancelado
+                  </li>
+                  <li>Módulo de produção com total geral a produzir</li>
+                  <li>
+                    Controle de estoque com produtos, quantidades e alertas
+                  </li>
+                  <li>Financeiro com receita, custos e lucro estimado</li>
+                  <li>
+                    Cadastro de produto com preço, custo, estoque e imagem
+                  </li>
+                  <li>Interface responsiva com navegação por módulos</li>
+                </ul>
+
+                <div class="tags">
+                  <span class="tag">Next.js</span>
+                  <span class="tag">React</span>
+                  <span class="tag">TypeScript</span>
+                  <span class="tag">Prisma</span>
+                  <span class="tag">SQLite</span>
+                  <span class="tag">Zod</span>
+                  <span class="tag">JWT</span>
+                  <span class="tag">Dashboard</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="project-img">
+                <img
+                  src="img/portfolio.png"
+                  alt="Portfólio com Docker"
+                  onerror="this.style.display = 'none'"
+                />
+              </div>
+
+              <div class="project-content">
+                <h3>Portfólio com Docker</h3>
+
+                <p>
+                  Página profissional criada para apresentar minhas habilidades,
+                  projetos e currículo em Markdown, rodando com Docker e Nginx.
+                  O projeto foi organizado com HTML, CSS e JavaScript separados.
+                </p>
+
+                <ul>
+                  <li>Página visual de apresentação</li>
+                  <li>Currículo em Markdown</li>
+                  <li>README explicativo</li>
+                  <li>Dockerfile para execução</li>
+                  <li>CSS e JavaScript organizados em arquivos próprios</li>
+                </ul>
+
+                <div class="tags">
+                  <span class="tag">HTML</span>
+                  <span class="tag">CSS</span>
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">Markdown</span>
+                  <span class="tag">Docker</span>
+                  <span class="tag">Nginx</span>
                 </div>
               </div>
             </article>

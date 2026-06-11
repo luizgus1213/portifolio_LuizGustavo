@@ -125,3 +125,30 @@ O Google Analytics foi preparado no projeto para acompanhar informações como:
 - Cliques em LinkedIn
 - Cliques em email
 - Cliques em telefone
+
+### VendaFácil Pro
+
+Sistema de gestão de vendas desenvolvido com React, Next.js, TypeScript, Prisma, SQLite e Zod.
+
+O projeto tem como objetivo controlar vendas, produção, estoque e financeiro em um sistema único, com autenticação segura e validações no backend.
+
+Funcionalidades principais:
+
+- Login e criação de conta
+- Autenticação com cookie HTTPOnly
+- Cadastro de produtos
+- Cadastro de clientes
+- Registro de vendas
+- Controle de status do pedido
+- Controle de estoque
+- Estoque mínimo
+- Controle de produção
+- Total geral a produzir
+- Controle financeiro
+- Receita bruta
+- Valores recebidos
+- Valores a receber
+- Custos
+- Lucro estimado
+- Dashboard de informações
+- Validação de dados no backend

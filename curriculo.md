@@ -87,6 +87,50 @@ O projeto foi criado com foco em simular uma loja virtual funcional, com cadastr
 
 ## Projeto Secundário
 
+### VendaFácil Pro
+
+Sistema de gestão de vendas desenvolvido com Next.js, React, TypeScript, Prisma, SQLite e Zod.
+
+O projeto foi criado com foco em controlar vendas, produção, estoque e financeiro em um sistema único, com autenticação, validações no backend e organização dos dados.
+
+### Funcionalidades desenvolvidas
+
+- Login e criação de conta de administrador
+- Autenticação com cookie HTTPOnly
+- Controle de acesso no backend
+- Registro de vendas
+- Cadastro de clientes
+- Cadastro de produtos
+- Cadastro de produto com imagem ou modelo pronto
+- Controle de estoque
+- Estoque mínimo
+- Controle de produção por pedido
+- Total geral a produzir
+- Controle financeiro
+- Receita bruta
+- Valores recebidos
+- Valores a receber
+- Custos
+- Lucro estimado
+- Status de venda
+- Data de retirada
+- Histórico de alteração de preço
+- Histórico de alteração de status da venda
+- Validação de dados no backend com Zod
+
+### Tecnologias usadas no projeto
+
+- React
+- Next.js
+- TypeScript
+- Prisma
+- SQLite
+- Zod
+- JWT
+- Cookie HTTPOnly
+- CSS Modules
+- API Routes
+
 ### Portfólio com Docker
 
 Portfólio profissional criado para apresentar minhas habilidades, projetos e currículo.
