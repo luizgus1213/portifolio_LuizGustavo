@@ -70,10 +70,9 @@ function configurarCarousel(nome, trackId, dotsId, tituloProjeto) {
     return;
   }
 
-  const imagens = track.querySelectorAll("img");
-  const totalSlides = imagens.length;
+  const imagens = Array.from(track.querySelectorAll("img"));
 
-  if (totalSlides === 0) {
+  if (imagens.length === 0) {
     console.warn(`Carrossel ${nome} não possui imagens.`);
     return;
   }
@@ -81,7 +80,8 @@ function configurarCarousel(nome, trackId, dotsId, tituloProjeto) {
   carrosseis[nome] = {
     track,
     dotsContainer,
-    totalSlides,
+    imagens,
+    totalSlides: imagens.length,
     slideAtual: 0,
     intervalo: null,
     tituloProjeto,
@@ -89,31 +89,42 @@ function configurarCarousel(nome, trackId, dotsId, tituloProjeto) {
 
   dotsContainer.innerHTML = "";
 
-  for (let i = 0; i < totalSlides; i++) {
+  imagens.forEach((img, index) => {
+    img.setAttribute("loading", "lazy");
+
+    img.addEventListener("click", () => {
+      abrirImagem(img.src, img.alt);
+    });
+
+    img.addEventListener("error", () => {
+      console.warn(`Imagem não encontrada: ${img.getAttribute("src")}`);
+      img.style.display = "none";
+    });
+
     const dot = document.createElement("button");
 
     dot.classList.add("carousel-dot");
     dot.setAttribute("type", "button");
-    dot.setAttribute("aria-label", `Ir para imagem ${i + 1}`);
+    dot.setAttribute("aria-label", `Ir para imagem ${index + 1}`);
 
-    if (i === 0) {
+    if (index === 0) {
       dot.classList.add("active");
     }
 
     dot.addEventListener("click", () => {
-      carrosseis[nome].slideAtual = i;
+      carrosseis[nome].slideAtual = index;
       atualizarCarousel(nome);
       reiniciarIntervalo(nome);
 
       enviarEventoAnalytics(
         "clique_dot_carrossel",
         tituloProjeto,
-        `Imagem ${i + 1}`,
+        `Imagem ${index + 1}`,
       );
     });
 
     dotsContainer.appendChild(dot);
-  }
+  });
 
   atualizarCarousel(nome);
   iniciarIntervalo(nome);
@@ -169,18 +180,75 @@ function iniciarIntervalo(nome) {
 
   if (!carousel) return;
 
+  clearInterval(carousel.intervalo);
+
   carousel.intervalo = setInterval(() => {
     mudarSlide(nome, 1, "auto");
   }, 4500);
 }
 
 function reiniciarIntervalo(nome) {
+  iniciarIntervalo(nome);
+}
+
+function abrirImagemAtual(nome) {
   const carousel = carrosseis[nome];
 
-  if (!carousel) return;
+  if (!carousel) {
+    console.warn(`Carrossel ${nome} não encontrado para abrir imagem.`);
+    return;
+  }
 
-  clearInterval(carousel.intervalo);
-  iniciarIntervalo(nome);
+  const imgAtual = carousel.imagens[carousel.slideAtual];
+
+  if (!imgAtual) return;
+
+  abrirImagem(imgAtual.src, imgAtual.alt);
+}
+
+function abrirImagem(src, alt) {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightboxImg");
+
+  if (!lightbox || !lightboxImg) {
+    console.warn("Lightbox não encontrado no HTML.");
+    return;
+  }
+
+  lightboxImg.src = src;
+  lightboxImg.alt = alt || "Imagem ampliada do projeto";
+
+  lightbox.classList.add("active");
+  lightbox.setAttribute("aria-hidden", "false");
+
+  enviarEventoAnalytics("abrir_imagem", "Imagem do projeto", alt || src);
+}
+
+function fecharLightbox() {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightboxImg");
+
+  if (!lightbox || !lightboxImg) return;
+
+  lightbox.classList.remove("active");
+  lightbox.setAttribute("aria-hidden", "true");
+  lightboxImg.src = "";
+}
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    fecharLightbox();
+  }
+});
+
+const lightbox = document.getElementById("lightbox");
+
+if (lightbox) {
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) {
+      fecharLightbox();
+    }
+  });
 }
 
 function enviarEventoAnalytics(nomeEvento, categoria, rotulo) {
@@ -201,7 +269,11 @@ document.querySelectorAll("a").forEach((link) => {
   });
 });
 
-configurarCarousel("lg", "lgCarousel", "lgDots", "Projeto LG Trambicagens");
-configurarCarousel("vf", "vfCarousel", "vfDots", "Projeto VendaFácil Pro");
+document.addEventListener("DOMContentLoaded", () => {
+  configurarCarousel("lg", "lgCarousel", "lgDots", "Projeto LG Trambicagens");
+  configurarCarousel("vf", "vfCarousel", "vfDots", "Projeto VendaFácil");
+});
 
 window.mudarSlide = mudarSlide;
+window.abrirImagemAtual = abrirImagemAtual;
+window.fecharLightbox = fecharLightbox;
