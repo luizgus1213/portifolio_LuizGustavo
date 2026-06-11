@@ -8,246 +8,480 @@ const palavras = [
   "Docker",
 ];
 
-const typing = document.getElementById("typing");
+const projetos = {
+  lg: {
+    titulo: "LG Trambicagens",
+    galeriaId: "galleryLg",
+    imagens: [
+      {
+        src: "img/lg-trambicagens-1.png",
+        alt: "LG Trambicagens - Página inicial",
+        nome: "Página inicial",
+      },
+      {
+        src: "img/lg-trambicagens-2.png",
+        alt: "LG Trambicagens - Painel de pedidos",
+        nome: "Painel de pedidos",
+      },
+      {
+        src: "img/lg-trambicagens-3.png",
+        alt: "LG Trambicagens - Página de produto",
+        nome: "Página de produto",
+      },
+      {
+        src: "img/lg-trambicagens-4.png",
+        alt: "LG Trambicagens - Filtros",
+        nome: "Filtros",
+      },
+      {
+        src: "img/lg-trambicagens-5.png",
+        alt: "LG Trambicagens - Resultados de pesquisa",
+        nome: "Resultados",
+      },
+      {
+        src: "img/lg-trambicagens-6.png",
+        alt: "LG Trambicagens - Carrinho",
+        nome: "Carrinho",
+      },
+      {
+        src: "img/lg-trambicagens-7.png",
+        alt: "LG Trambicagens - Checkout",
+        nome: "Checkout",
+      },
+      {
+        src: "img/lg-trambicagens-8.png",
+        alt: "LG Trambicagens - Rastreamento de pedido",
+        nome: "Pedido",
+      },
+      {
+        src: "img/lg-trambicagens-9.png",
+        alt: "LG Trambicagens - Perfil do usuário",
+        nome: "Perfil",
+      },
+      {
+        src: "img/lg-trambicagens-10.png",
+        alt: "LG Trambicagens - Menu lateral",
+        nome: "Menu lateral",
+      },
+    ],
+  },
 
-let palavraIndex = 0;
-let letraIndex = 0;
-let apagando = false;
-
-function escrever() {
-  if (!typing) return;
-
-  const palavraAtual = palavras[palavraIndex];
-
-  if (!apagando) {
-    typing.textContent = palavraAtual.substring(0, letraIndex + 1);
-    letraIndex++;
-
-    if (letraIndex === palavraAtual.length) {
-      apagando = true;
-      setTimeout(escrever, 1300);
-      return;
-    }
-  } else {
-    typing.textContent = palavraAtual.substring(0, letraIndex - 1);
-    letraIndex--;
-
-    if (letraIndex === 0) {
-      apagando = false;
-      palavraIndex = (palavraIndex + 1) % palavras.length;
-    }
-  }
-
-  setTimeout(escrever, apagando ? 45 : 85);
-}
-
-escrever();
-
-const reveals = document.querySelectorAll(".reveal");
-
-function revelarNaTela() {
-  reveals.forEach((elemento) => {
-    const topo = elemento.getBoundingClientRect().top;
-    const alturaTela = window.innerHeight;
-
-    if (topo < alturaTela - 100) {
-      elemento.classList.add("active");
-    }
-  });
-}
-
-window.addEventListener("scroll", revelarNaTela);
-revelarNaTela();
+  vf: {
+    titulo: "VendaFácil",
+    galeriaId: "galleryVf",
+    imagens: [
+      {
+        src: "img/vendafacil-1.png",
+        alt: "VendaFácil - Criar conta",
+        nome: "Criar conta",
+      },
+      {
+        src: "img/vendafacil-2.png",
+        alt: "VendaFácil - Login",
+        nome: "Login",
+      },
+      {
+        src: "img/vendafacil-3.png",
+        alt: "VendaFácil - Vendas",
+        nome: "Vendas",
+      },
+      {
+        src: "img/vendafacil-4.png",
+        alt: "VendaFácil - Financeiro",
+        nome: "Financeiro",
+      },
+      {
+        src: "img/vendafacil-5.png",
+        alt: "VendaFácil - Registrar venda",
+        nome: "Registrar venda",
+      },
+      {
+        src: "img/vendafacil-6.png",
+        alt: "VendaFácil - Cadastrar produto",
+        nome: "Cadastrar produto",
+      },
+      {
+        src: "img/vendafacil-7.png",
+        alt: "VendaFácil - Produção",
+        nome: "Produção",
+      },
+      {
+        src: "img/vendafacil-8.png",
+        alt: "VendaFácil - Estoque",
+        nome: "Estoque",
+      },
+      {
+        src: "img/vendafacil-9.png",
+        alt: "VendaFácil - Resumo financeiro",
+        nome: "Resumo financeiro",
+      },
+    ],
+  },
+};
 
 const carrosseis = {};
+let lightboxLista = [];
+let lightboxIndex = 0;
 
-function configurarCarousel(nome, trackId, dotsId, tituloProjeto) {
-  const track = document.getElementById(trackId);
-  const dotsContainer = document.getElementById(dotsId);
+document.addEventListener("DOMContentLoaded", () => {
+  iniciarDigitacao();
+  iniciarReveal();
+  iniciarCarrosseis();
+  montarGalerias();
+  iniciarGaleria();
+  iniciarLightbox();
+  iniciarAnalyticsLinks();
+});
 
-  if (!track || !dotsContainer) {
-    console.warn(`Carrossel ${nome} não encontrado.`);
-    return;
-  }
+function iniciarDigitacao() {
+  const typing = document.getElementById("typing");
 
-  const imagens = Array.from(track.querySelectorAll("img"));
+  if (!typing) return;
 
-  if (imagens.length === 0) {
-    console.warn(`Carrossel ${nome} não possui imagens.`);
-    return;
-  }
+  let palavraIndex = 0;
+  let letraIndex = 0;
+  let apagando = false;
 
-  carrosseis[nome] = {
-    track,
-    dotsContainer,
-    imagens,
-    totalSlides: imagens.length,
-    slideAtual: 0,
-    intervalo: null,
-    tituloProjeto,
-  };
+  function escrever() {
+    const palavraAtual = palavras[palavraIndex];
 
-  dotsContainer.innerHTML = "";
+    if (!apagando) {
+      typing.textContent = palavraAtual.substring(0, letraIndex + 1);
+      letraIndex++;
 
-  imagens.forEach((img, index) => {
-    img.setAttribute("loading", "lazy");
+      if (letraIndex === palavraAtual.length) {
+        apagando = true;
+        setTimeout(escrever, 1300);
+        return;
+      }
+    } else {
+      typing.textContent = palavraAtual.substring(0, letraIndex - 1);
+      letraIndex--;
 
-    img.addEventListener("click", () => {
-      abrirImagem(img.src, img.alt);
-    });
-
-    img.addEventListener("error", () => {
-      console.warn(`Imagem não encontrada: ${img.getAttribute("src")}`);
-    });
-
-    const dot = document.createElement("button");
-
-    dot.classList.add("carousel-dot");
-    dot.setAttribute("type", "button");
-    dot.setAttribute("aria-label", `Ir para imagem ${index + 1}`);
-
-    if (index === 0) {
-      dot.classList.add("active");
+      if (letraIndex === 0) {
+        apagando = false;
+        palavraIndex = (palavraIndex + 1) % palavras.length;
+      }
     }
 
-    dot.addEventListener("click", () => {
-      carrosseis[nome].slideAtual = index;
-      atualizarCarousel(nome);
-      reiniciarIntervalo(nome);
+    setTimeout(escrever, apagando ? 45 : 85);
+  }
 
-      enviarEventoAnalytics(
-        "clique_dot_carrossel",
-        tituloProjeto,
-        `Imagem ${index + 1}`,
-      );
-    });
-
-    dotsContainer.appendChild(dot);
-  });
-
-  atualizarCarousel(nome);
-  iniciarIntervalo(nome);
+  escrever();
 }
 
-function atualizarCarousel(nome) {
-  const carousel = carrosseis[nome];
+function iniciarReveal() {
+  const elementos = document.querySelectorAll(".reveal");
+
+  if (!elementos.length) return;
+
+  const observer = new IntersectionObserver(
+    (entradas) => {
+      entradas.forEach((entrada) => {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add("active");
+        }
+      });
+    },
+    {
+      threshold: 0.15,
+    },
+  );
+
+  elementos.forEach((elemento) => observer.observe(elemento));
+}
+
+function iniciarCarrosseis() {
+  Object.keys(projetos).forEach((chave) => {
+    const projeto = projetos[chave];
+    const carousel = document.querySelector(`[data-carousel="${chave}"]`);
+
+    if (!carousel) return;
+
+    const track = carousel.querySelector(".carousel-track");
+    const imagens = Array.from(track.querySelectorAll("img"));
+    const dotsContainer = document.querySelector(
+      `[data-carousel-dots="${chave}"]`,
+    );
+    const prevButton = document.querySelector(
+      `[data-carousel-prev="${chave}"]`,
+    );
+    const nextButton = document.querySelector(
+      `[data-carousel-next="${chave}"]`,
+    );
+    const openButton = document.querySelector(`[data-open-current="${chave}"]`);
+
+    if (!track || !imagens.length || !dotsContainer) return;
+
+    carrosseis[chave] = {
+      projeto,
+      track,
+      imagens,
+      dotsContainer,
+      atual: 0,
+      timer: null,
+    };
+
+    dotsContainer.innerHTML = "";
+
+    imagens.forEach((img, index) => {
+      img.loading = "lazy";
+
+      img.addEventListener("click", () => {
+        abrirLightbox(projeto.imagens, index);
+      });
+
+      img.addEventListener("error", () => {
+        console.warn(`Imagem não encontrada: ${img.getAttribute("src")}`);
+      });
+
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "carousel-dot";
+      dot.setAttribute("aria-label", `Ir para imagem ${index + 1}`);
+
+      dot.addEventListener("click", () => {
+        irParaSlide(chave, index);
+        reiniciarTimer(chave);
+      });
+
+      dotsContainer.appendChild(dot);
+    });
+
+    if (prevButton) {
+      prevButton.addEventListener("click", () => {
+        mudarSlide(chave, -1);
+      });
+    }
+
+    if (nextButton) {
+      nextButton.addEventListener("click", () => {
+        mudarSlide(chave, 1);
+      });
+    }
+
+    if (openButton) {
+      openButton.addEventListener("click", () => {
+        abrirLightbox(projeto.imagens, carrosseis[chave].atual);
+      });
+    }
+
+    irParaSlide(chave, 0);
+    iniciarTimer(chave);
+  });
+}
+
+function irParaSlide(chave, index) {
+  const carousel = carrosseis[chave];
 
   if (!carousel) return;
 
-  carousel.track.style.transform = `translateX(-${carousel.slideAtual * 100}%)`;
+  const total = carousel.imagens.length;
 
-  carousel.dotsContainer
-    .querySelectorAll(".carousel-dot")
-    .forEach((dot, index) => {
-      dot.classList.toggle("active", index === carousel.slideAtual);
-    });
+  carousel.atual = ((index % total) + total) % total;
+  carousel.track.style.transform = `translateX(-${carousel.atual * 100}%)`;
+
+  const dots = carousel.dotsContainer.querySelectorAll(".carousel-dot");
+
+  dots.forEach((dot, dotIndex) => {
+    dot.classList.toggle("active", dotIndex === carousel.atual);
+  });
 }
 
-function mudarSlide(nome, direcao, origem = "botao") {
-  const carousel = carrosseis[nome];
+function mudarSlide(chave, direcao) {
+  const carousel = carrosseis[chave];
 
-  if (!carousel) {
-    console.warn(`Carrossel ${nome} não existe.`);
-    return;
-  }
+  if (!carousel) return;
 
-  carousel.slideAtual += direcao;
+  irParaSlide(chave, carousel.atual + direcao);
+  reiniciarTimer(chave);
 
-  if (carousel.slideAtual < 0) {
-    carousel.slideAtual = carousel.totalSlides - 1;
-  }
+  enviarEventoAnalytics(
+    "clique_carrossel",
+    carousel.projeto.titulo,
+    direcao > 0 ? "Próxima imagem" : "Imagem anterior",
+  );
+}
 
-  if (carousel.slideAtual >= carousel.totalSlides) {
-    carousel.slideAtual = 0;
-  }
+function iniciarTimer(chave) {
+  const carousel = carrosseis[chave];
 
-  atualizarCarousel(nome);
+  if (!carousel) return;
 
-  if (origem !== "auto") {
-    reiniciarIntervalo(nome);
+  clearInterval(carousel.timer);
+
+  carousel.timer = setInterval(() => {
+    irParaSlide(chave, carousel.atual + 1);
+  }, 5000);
+}
+
+function reiniciarTimer(chave) {
+  iniciarTimer(chave);
+}
+
+function montarGalerias() {
+  Object.keys(projetos).forEach((chave) => {
+    const projeto = projetos[chave];
+    const container = document.getElementById(projeto.galeriaId);
+
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    projeto.imagens.forEach((imagem, index) => {
+      const button = document.createElement("button");
+
+      button.type = "button";
+      button.className = "gallery-card";
+
+      button.innerHTML = `
+        <img src="${imagem.src}" alt="${imagem.alt}" loading="lazy" />
+        <span>${imagem.nome}</span>
+      `;
+
+      button.addEventListener("click", () => {
+        abrirLightbox(projeto.imagens, index);
+      });
+
+      container.appendChild(button);
+    });
+  });
+}
+
+function iniciarGaleria() {
+  const gallery = document.getElementById("gallery");
+  const toggleButton = document.getElementById("toggleGallery");
+
+  if (!gallery || !toggleButton) return;
+
+  toggleButton.addEventListener("click", () => {
+    gallery.classList.toggle("maximized");
+
+    const maximizada = gallery.classList.contains("maximized");
+
+    toggleButton.textContent = maximizada
+      ? "Minimizar imagens"
+      : "Maximizar imagens";
 
     enviarEventoAnalytics(
-      "clique_carrossel",
-      carousel.tituloProjeto,
-      direcao > 0 ? "Próxima imagem" : "Imagem anterior",
+      "alternar_galeria",
+      "Galeria",
+      maximizada ? "Maximizar imagens" : "Minimizar imagens",
     );
-  }
+  });
 }
 
-function iniciarIntervalo(nome) {
-  const carousel = carrosseis[nome];
+function iniciarLightbox() {
+  const lightbox = document.getElementById("lightbox");
+  const closeButton = document.getElementById("lightboxClose");
+  const prevButton = document.getElementById("lightboxPrev");
+  const nextButton = document.getElementById("lightboxNext");
 
-  if (!carousel) return;
+  if (!lightbox) return;
 
-  clearInterval(carousel.intervalo);
-
-  carousel.intervalo = setInterval(() => {
-    mudarSlide(nome, 1, "auto");
-  }, 4500);
-}
-
-function reiniciarIntervalo(nome) {
-  iniciarIntervalo(nome);
-}
-
-function abrirImagemAtual(nome) {
-  const carousel = carrosseis[nome];
-
-  if (!carousel) {
-    console.warn(`Carrossel ${nome} não encontrado para abrir imagem.`);
-    return;
+  if (closeButton) {
+    closeButton.addEventListener("click", fecharLightbox);
   }
 
-  const imgAtual = carousel.imagens[carousel.slideAtual];
+  if (prevButton) {
+    prevButton.addEventListener("click", () => mudarImagemLightbox(-1));
+  }
 
-  if (!imgAtual) return;
+  if (nextButton) {
+    nextButton.addEventListener("click", () => mudarImagemLightbox(1));
+  }
 
-  abrirImagem(imgAtual.src, imgAtual.alt);
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) {
+      fecharLightbox();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      fecharLightbox();
+    }
+
+    if (event.key === "ArrowLeft") {
+      mudarImagemLightbox(-1);
+    }
+
+    if (event.key === "ArrowRight") {
+      mudarImagemLightbox(1);
+    }
+  });
 }
 
-function abrirImagem(src, alt) {
+function abrirLightbox(lista, index) {
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightboxImg");
+  const lightboxCaption = document.getElementById("lightboxCaption");
 
-  if (!lightbox || !lightboxImg) {
-    console.warn("Lightbox não encontrado no HTML.");
-    return;
+  if (!lightbox || !lightboxImg) return;
+
+  lightboxLista = lista;
+  lightboxIndex = index;
+
+  const imagem = lightboxLista[lightboxIndex];
+
+  lightboxImg.src = imagem.src;
+  lightboxImg.alt = imagem.alt;
+
+  if (lightboxCaption) {
+    lightboxCaption.textContent = imagem.alt;
   }
-
-  lightboxImg.src = src;
-  lightboxImg.alt = alt || "Imagem ampliada do projeto";
 
   lightbox.classList.add("active");
   lightbox.setAttribute("aria-hidden", "false");
 
-  enviarEventoAnalytics("abrir_imagem", "Imagem ampliada", alt || src);
+  enviarEventoAnalytics("abrir_imagem", "Imagem ampliada", imagem.alt);
+}
+
+function mudarImagemLightbox(direcao) {
+  if (!lightboxLista.length) return;
+
+  lightboxIndex =
+    (lightboxIndex + direcao + lightboxLista.length) % lightboxLista.length;
+
+  const imagem = lightboxLista[lightboxIndex];
+  const lightboxImg = document.getElementById("lightboxImg");
+  const lightboxCaption = document.getElementById("lightboxCaption");
+
+  if (!lightboxImg) return;
+
+  lightboxImg.src = imagem.src;
+  lightboxImg.alt = imagem.alt;
+
+  if (lightboxCaption) {
+    lightboxCaption.textContent = imagem.alt;
+  }
 }
 
 function fecharLightbox() {
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightboxImg");
+  const lightboxCaption = document.getElementById("lightboxCaption");
 
   if (!lightbox || !lightboxImg) return;
 
   lightbox.classList.remove("active");
   lightbox.setAttribute("aria-hidden", "true");
   lightboxImg.src = "";
+
+  if (lightboxCaption) {
+    lightboxCaption.textContent = "";
+  }
 }
 
-function alternarGaleria() {
-  const gallery = document.getElementById("gallery");
+function iniciarAnalyticsLinks() {
+  document.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      const texto = link.textContent.trim();
+      const href = link.getAttribute("href");
 
-  if (!gallery) return;
-
-  gallery.classList.toggle("maximized");
-
-  const estaMaximizada = gallery.classList.contains("maximized");
-
-  enviarEventoAnalytics(
-    "alternar_galeria",
-    "Galeria de imagens",
-    estaMaximizada ? "Maximizar imagens" : "Minimizar imagens",
-  );
+      enviarEventoAnalytics("clique_link", "Links do portfólio", texto || href);
+    });
+  });
 }
 
 function enviarEventoAnalytics(nomeEvento, categoria, rotulo) {
@@ -259,36 +493,6 @@ function enviarEventoAnalytics(nomeEvento, categoria, rotulo) {
   }
 }
 
-document.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    const texto = link.textContent.trim();
-    const href = link.getAttribute("href");
-
-    enviarEventoAnalytics("clique_link", "Links do portfólio", texto || href);
-  });
-});
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    fecharLightbox();
-  }
-});
-
-const lightboxElemento = document.getElementById("lightbox");
-
-if (lightboxElemento) {
-  lightboxElemento.addEventListener("click", (event) => {
-    if (event.target === lightboxElemento) {
-      fecharLightbox();
-    }
-  });
-}
-
-configurarCarousel("lg", "lgCarousel", "lgDots", "Projeto LG Trambicagens");
-configurarCarousel("vf", "vfCarousel", "vfDots", "Projeto VendaFácil");
-
 window.mudarSlide = mudarSlide;
-window.abrirImagemAtual = abrirImagemAtual;
-window.abrirImagem = abrirImagem;
+window.abrirLightbox = abrirLightbox;
 window.fecharLightbox = fecharLightbox;
-window.alternarGaleria = alternarGaleria;

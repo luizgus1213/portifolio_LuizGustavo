@@ -24,33 +24,27 @@
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Portfólio - Luiz Gustavo" />
-
     <meta
       property="og:description"
       content="Conheça o portfólio de Luiz Gustavo, Desenvolvedor Full Stack Júnior com projetos em React, Next.js, TypeScript, Node.js, SQLite, Sequelize, Prisma e Docker."
     />
-
     <meta property="og:url" content="https://luizgustavo.ignum.com.br/" />
-
     <meta
       property="og:image"
-      content="https://luizgustavo.ignum.com.br/img/lg-trambicagens-3.png"
+      content="https://luizgustavo.ignum.com.br/img/lg-trambicagens-1.png"
     />
-
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:site_name" content="Portfólio Luiz Gustavo" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Portfólio - Luiz Gustavo" />
-
     <meta
       name="twitter:description"
       content="Desenvolvedor Full Stack Júnior com projetos em React, Next.js, TypeScript, Node.js, SQLite, Sequelize, Prisma e Docker."
     />
-
     <meta
       name="twitter:image"
-      content="https://luizgustavo.ignum.com.br/img/lg-trambicagens-3.png"
+      content="https://luizgustavo.ignum.com.br/img/lg-trambicagens-1.png"
     />
 
     <script type="application/ld+json">
@@ -112,15 +106,15 @@
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
     />
 
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css?v=30" />
   </head>
 
   <body>
-    <header>
+    <header class="header">
       <div class="container">
-        <nav>
+        <nav class="navbar">
           <a class="logo" href="#inicio" aria-label="Voltar para o início">
-            LUIZ<span>GUSTAVO</span>
+            Luiz<span>Gustavo</span>
           </a>
 
           <div class="menu">
@@ -128,6 +122,7 @@
             <a href="#sobre">Sobre</a>
             <a href="#tecnologias">Tecnologias</a>
             <a href="#projetos">Projetos</a>
+            <a href="#galeria">Galeria</a>
             <a href="#contato">Contato</a>
           </div>
         </nav>
@@ -137,105 +132,109 @@
     <main>
       <section class="hero" id="inicio">
         <div class="container">
-          <div class="hero-content">
-            <p class="hello">Olá, visitante! <span class="emoji">👋</span></p>
+          <div class="hero-content reveal">
+            <span class="hero-tag">Portfólio profissional</span>
 
-            <h1>Meu nome é <span>Luiz</span></h1>
+            <h1>Luiz Gustavo</h1>
 
-            <h2>Desenvolvedor <span class="typing" id="typing"></span></h2>
+            <h2>
+              Desenvolvedor
+              <span class="typing" id="typing"></span>
+            </h2>
 
             <p>
-              Crio aplicações web com foco em interfaces modernas, sistemas
-              funcionais, autenticação, banco de dados, APIs, SEO e boa
-              experiência para o usuário.
+              Crio aplicações web modernas com foco em interfaces responsivas,
+              APIs, autenticação, banco de dados, validações no backend, SEO e
+              organização de código.
             </p>
 
-            <div class="social">
+            <div class="hero-actions">
               <a class="btn btn-primary" href="#projetos">Ver projetos</a>
 
-              <a class="btn btn-dark" href="curriculo.md" target="_blank">
-                Currículo Markdown
+              <a class="btn btn-secondary" href="#galeria">
+                Ver imagens ampliadas
               </a>
 
-              <a class="btn btn-dark" href="mailto:luizgus397@gmail.com">
-                Email
-              </a>
-
-              <a
-                class="btn btn-dark"
-                href="https://github.com/luizgus1213"
-                target="_blank"
-              >
-                GitHub
-              </a>
-
-              <a
-                class="btn btn-dark"
-                href="https://www.linkedin.com/in/luiz-gustavo-66a3b93a0"
-                target="_blank"
-              >
-                LinkedIn
+              <a class="btn btn-outline" href="curriculo.md" target="_blank">
+                Currículo
               </a>
             </div>
           </div>
         </div>
-
-        <div class="scroll">SCROLL</div>
       </section>
 
       <section id="sobre">
         <div class="container reveal">
           <div class="section-title">
-            <small>Sobre mim</small>
-            <h2>Um pouco sobre meu trabalho</h2>
-            <div class="line"></div>
+            <span>Sobre mim</span>
+            <h2>Desenvolvedor Full Stack Júnior</h2>
           </div>
 
-          <div class="about">
+          <div class="about-grid">
             <div class="about-text">
               <p>
-                Sou Desenvolvedor Full Stack Júnior, focado em construir
-                sistemas web completos, objetivos, responsivos e bem
-                organizados.
+                Sou Desenvolvedor Full Stack Júnior com experiência em projetos
+                web completos, desenvolvendo desde a interface até o backend.
               </p>
 
               <p>
-                Tenho experiência com React, Next.js, TypeScript, Node.js,
-                Express, SQLite, Sequelize, Prisma e Docker, criando desde a
-                interface até o backend.
+                Tenho prática com React, Next.js, TypeScript, Node.js, Express,
+                SQLite, Sequelize, Prisma, Zod, Docker e integração entre
+                frontend e backend.
               </p>
 
               <p>
-                Meu foco é desenvolver projetos práticos, com boa aparência,
-                funcionalidades reais, validações no backend, organização de
-                código, SEO básico e boa experiência para o usuário.
+                Meus projetos demonstram recursos reais como login, cadastro,
+                autenticação, carrinho, pedidos, controle de estoque, gestão de
+                vendas, financeiro, dashboards e validações no backend.
               </p>
             </div>
 
-            <div class="about-card">
+            <div class="info-card">
               <h3>Informações</h3>
 
-              <div class="info">
-                <div><strong>Nome:</strong> Luiz Gustavo</div>
-                <div><strong>Cidade:</strong> Dionísio - MG</div>
-                <div><strong>Área:</strong> Full Stack Júnior</div>
-                <div><strong>Telefone:</strong> +55 31 9925-5745</div>
-                <div><strong>Email:</strong> luizgus397@gmail.com</div>
+              <div class="info-list">
+                <div>
+                  <strong>Nome</strong>
+                  <span>Luiz Gustavo</span>
+                </div>
 
                 <div>
-                  <strong>LinkedIn:</strong>
+                  <strong>Cidade</strong>
+                  <span>Dionísio - MG</span>
+                </div>
+
+                <div>
+                  <strong>Área</strong>
+                  <span>Full Stack Júnior</span>
+                </div>
+
+                <div>
+                  <strong>Email</strong>
+                  <a href="mailto:luizgus397@gmail.com">
+                    luizgus397@gmail.com
+                  </a>
+                </div>
+
+                <div>
+                  <strong>Telefone</strong>
+                  <a href="tel:+553199255745">+55 31 9925-5745</a>
+                </div>
+
+                <div>
+                  <strong>GitHub</strong>
+                  <a href="https://github.com/luizgus1213" target="_blank">
+                    github.com/luizgus1213
+                  </a>
+                </div>
+
+                <div>
+                  <strong>LinkedIn</strong>
                   <a
                     href="https://www.linkedin.com/in/luiz-gustavo-66a3b93a0"
                     target="_blank"
                   >
                     Luiz Gustavo
-                  </a>
-                </div>
-
-                <div>
-                  <strong>GitHub:</strong>
-                  <a href="https://github.com/luizgus1213" target="_blank">
-                    luizgus1213
                   </a>
                 </div>
               </div>
@@ -247,75 +246,74 @@
       <section id="tecnologias">
         <div class="container reveal">
           <div class="section-title">
-            <small>Habilidades</small>
+            <span>Habilidades</span>
             <h2>Tecnologias</h2>
-            <div class="line"></div>
           </div>
 
-          <div class="skills">
+          <div class="skills-grid">
             <div class="skill">
-              <i class="devicon-html5-plain icon"></i>
-              <strong>HTML</strong>
+              <i class="devicon-html5-plain"></i>
+              <span>HTML</span>
             </div>
 
             <div class="skill">
-              <i class="devicon-css3-plain icon"></i>
-              <strong>CSS</strong>
+              <i class="devicon-css3-plain"></i>
+              <span>CSS</span>
             </div>
 
             <div class="skill">
-              <i class="devicon-javascript-plain icon"></i>
-              <strong>JavaScript</strong>
+              <i class="devicon-javascript-plain"></i>
+              <span>JavaScript</span>
             </div>
 
             <div class="skill">
-              <i class="devicon-typescript-plain icon"></i>
-              <strong>TypeScript</strong>
+              <i class="devicon-typescript-plain"></i>
+              <span>TypeScript</span>
             </div>
 
             <div class="skill">
-              <i class="devicon-react-original icon"></i>
-              <strong>React</strong>
+              <i class="devicon-react-original"></i>
+              <span>React</span>
             </div>
 
             <div class="skill">
-              <i class="devicon-nextjs-plain icon"></i>
-              <strong>Next.js</strong>
+              <i class="devicon-nextjs-plain"></i>
+              <span>Next.js</span>
             </div>
 
             <div class="skill">
-              <i class="devicon-nodejs-plain icon"></i>
-              <strong>Node.js</strong>
+              <i class="devicon-nodejs-plain"></i>
+              <span>Node.js</span>
             </div>
 
             <div class="skill">
-              <i class="devicon-express-original icon"></i>
-              <strong>Express</strong>
+              <i class="devicon-express-original"></i>
+              <span>Express</span>
             </div>
 
             <div class="skill">
-              <i class="devicon-sqlite-plain icon"></i>
-              <strong>SQLite</strong>
+              <i class="devicon-sqlite-plain"></i>
+              <span>SQLite</span>
             </div>
 
             <div class="skill">
-              <i class="devicon-sequelize-plain icon"></i>
-              <strong>Sequelize</strong>
+              <i class="devicon-sequelize-plain"></i>
+              <span>Sequelize</span>
             </div>
 
             <div class="skill">
-              <i class="devicon-prisma-original icon"></i>
-              <strong>Prisma</strong>
+              <i class="devicon-prisma-original"></i>
+              <span>Prisma</span>
             </div>
 
             <div class="skill">
-              <i class="devicon-docker-plain icon"></i>
-              <strong>Docker</strong>
+              <i class="devicon-docker-plain"></i>
+              <span>Docker</span>
             </div>
 
             <div class="skill">
-              <i class="devicon-github-original icon"></i>
-              <strong>GitHub</strong>
+              <i class="devicon-github-original"></i>
+              <span>GitHub</span>
             </div>
           </div>
         </div>
@@ -324,60 +322,60 @@
       <section id="projetos">
         <div class="container reveal">
           <div class="section-title">
-            <small>Portfólio</small>
+            <span>Portfólio</span>
             <h2>Projetos desenvolvidos</h2>
-            <div class="line"></div>
           </div>
 
-          <div class="projects">
-            <article class="project">
-              <div class="project-img carousel">
-                <div class="carousel-track" id="lgCarousel">
+          <div class="projects-grid">
+            <article class="project-card">
+              <div class="project-media" data-carousel="lg">
+                <div class="carousel-track">
+                  <img
+                    src="img/lg-trambicagens-1.png"
+                    alt="LG Trambicagens - Página inicial"
+                  />
+                  <img
+                    src="img/lg-trambicagens-2.png"
+                    alt="LG Trambicagens - Painel de pedidos"
+                  />
                   <img
                     src="img/lg-trambicagens-3.png"
-                    alt="Página individual de produto do sistema LG Trambicagens"
+                    alt="LG Trambicagens - Página de produto"
                   />
-
                   <img
                     src="img/lg-trambicagens-4.png"
-                    alt="Filtros de pesquisa do sistema LG Trambicagens"
+                    alt="LG Trambicagens - Filtros"
                   />
-
                   <img
                     src="img/lg-trambicagens-5.png"
-                    alt="Tela de resultados de pesquisa do sistema LG Trambicagens"
+                    alt="LG Trambicagens - Resultados da pesquisa"
                   />
-
                   <img
                     src="img/lg-trambicagens-6.png"
-                    alt="Tela do carrinho do sistema LG Trambicagens"
+                    alt="LG Trambicagens - Carrinho"
                   />
-
                   <img
                     src="img/lg-trambicagens-7.png"
-                    alt="Tela de checkout do sistema LG Trambicagens"
+                    alt="LG Trambicagens - Checkout"
                   />
-
                   <img
                     src="img/lg-trambicagens-8.png"
-                    alt="Tela de acompanhamento de pedido do sistema LG Trambicagens"
+                    alt="LG Trambicagens - Rastreamento de pedido"
                   />
-
                   <img
                     src="img/lg-trambicagens-9.png"
-                    alt="Tela de perfil do usuário do sistema LG Trambicagens"
+                    alt="LG Trambicagens - Perfil"
                   />
-
                   <img
                     src="img/lg-trambicagens-10.png"
-                    alt="Menu lateral do sistema LG Trambicagens"
+                    alt="LG Trambicagens - Menu lateral"
                   />
                 </div>
 
                 <button
                   class="carousel-btn prev"
                   type="button"
-                  onclick="mudarSlide('lg', -1)"
+                  data-carousel-prev="lg"
                   aria-label="Imagem anterior"
                 >
                   ‹
@@ -386,20 +384,16 @@
                 <button
                   class="carousel-btn next"
                   type="button"
-                  onclick="mudarSlide('lg', 1)"
+                  data-carousel-next="lg"
                   aria-label="Próxima imagem"
                 >
                   ›
                 </button>
 
-                <div class="carousel-dots" id="lgDots"></div>
+                <div class="carousel-dots" data-carousel-dots="lg"></div>
 
-                <button
-                  class="view-image"
-                  type="button"
-                  onclick="abrirImagemAtual('lg')"
-                >
-                  Ver imagem maior
+                <button class="view-image" type="button" data-open-current="lg">
+                  Ampliar
                 </button>
               </div>
 
@@ -409,91 +403,68 @@
                 <h3>LG Trambicagens</h3>
 
                 <p>
-                  Sistema completo de loja online desenvolvido com Next.js,
-                  React, TypeScript, Node.js, Sequelize e SQLite. O projeto
-                  possui frontend, backend, autenticação, banco de dados,
-                  produtos, imagens, carrinho, checkout, pedidos, cupons,
-                  notificações e painel administrativo.
+                  Sistema completo de loja online com frontend, backend,
+                  autenticação, produtos, imagens, carrinho, checkout, pedidos,
+                  cupons, notificações, perfil do usuário e painel
+                  administrativo.
                 </p>
 
                 <ul>
                   <li>Login, cadastro e verificação de email</li>
                   <li>Autenticação com JWT e cookies</li>
-                  <li>Cadastro, listagem e pesquisa de produtos</li>
-                  <li>Upload e exibição de imagens</li>
-                  <li>Carrinho de compras e checkout</li>
-                  <li>Sistema de pedidos e histórico de compras</li>
-                  <li>Favoritos, cupons e notificações</li>
-                  <li>Painel administrativo</li>
-                  <li>Tema claro e escuro</li>
+                  <li>Produtos, pesquisa, filtros e página individual</li>
+                  <li>Carrinho, checkout e rastreamento de pedidos</li>
+                  <li>Perfil, favoritos, cupons e painel administrativo</li>
                 </ul>
 
                 <div class="tags">
-                  <span class="tag">Next.js</span>
-                  <span class="tag">React</span>
-                  <span class="tag">TypeScript</span>
-                  <span class="tag">Node.js</span>
-                  <span class="tag">SQLite</span>
-                  <span class="tag">Sequelize</span>
-                  <span class="tag">JWT</span>
-                  <span class="tag">Docker</span>
+                  <span>Next.js</span>
+                  <span>React</span>
+                  <span>TypeScript</span>
+                  <span>Node.js</span>
+                  <span>SQLite</span>
+                  <span>Sequelize</span>
+                  <span>JWT</span>
                 </div>
               </div>
             </article>
 
-            <article class="project">
-              <div class="project-img carousel">
-                <div class="carousel-track" id="vfCarousel">
-                  <img
-                    src="img/vendafacil-2.png"
-                    alt="Tela de login do sistema VendaFácil "
-                  />
-
+            <article class="project-card">
+              <div class="project-media" data-carousel="vf">
+                <div class="carousel-track">
                   <img
                     src="img/vendafacil-1.png"
-                    alt="Tela de criação de conta do sistema VendaFácil "
+                    alt="VendaFácil - Criar conta"
                   />
-
+                  <img src="img/vendafacil-2.png" alt="VendaFácil - Login" />
                   <img
                     src="img/vendafacil-3.png"
-                    alt="Painel principal de vendas do VendaFácil "
+                    alt="VendaFácil - Tela de vendas"
                   />
-
                   <img
                     src="img/vendafacil-4.png"
-                    alt="Tela de registro de venda do VendaFácil "
+                    alt="VendaFácil - Financeiro"
                   />
-
-                  <img
-                    src="img/vendafacil-8.png"
-                    alt="Modal de registro de venda do VendaFácil "
-                  />
-
-                  <img
-                    src="img/vendafacil-9.png"
-                    alt="Modal de cadastro de duto do VendaFácil "
-                  />
-
                   <img
                     src="img/vendafacil-5.png"
-                    alt="Tela de dução do VendaFácil "
+                    alt="VendaFácil - Registrar venda"
                   />
-
                   <img
                     src="img/vendafacil-6.png"
-                    alt="Tela de estoque do VendaFácil "
+                    alt="VendaFácil - Cadastrar produto"
                   />
-
+                  <img src="img/vendafacil-7.png" alt="VendaFácil - Produção" />
+                  <img src="img/vendafacil-8.png" alt="VendaFácil - Estoque" />
                   <img
-                    src="img/vendafacil-7.png"
-                    alt="Tela financeira do VendaFácil "
+                    src="img/vendafacil-9.png"
+                    alt="VendaFácil - Resumo financeiro"
                   />
                 </div>
 
                 <button
                   class="carousel-btn prev"
                   type="button"
-                  onclick="mudarSlide('vf', -1)"
+                  data-carousel-prev="vf"
                   aria-label="Imagem anterior"
                 >
                   ‹
@@ -502,20 +473,16 @@
                 <button
                   class="carousel-btn next"
                   type="button"
-                  onclick="mudarSlide('vf', 1)"
+                  data-carousel-next="vf"
                   aria-label="Próxima imagem"
                 >
                   ›
                 </button>
 
-                <div class="carousel-dots" id="vfDots"></div>
+                <div class="carousel-dots" data-carousel-dots="vf"></div>
 
-                <button
-                  class="view-image"
-                  type="button"
-                  onclick="abrirImagemAtual('vf')"
-                >
-                  Ver imagem maior
+                <button class="view-image" type="button" data-open-current="vf">
+                  Ampliar
                 </button>
               </div>
 
@@ -525,426 +492,111 @@
                 <h3>VendaFácil</h3>
 
                 <p>
-                  Sistema de gestão de vendas desenvolvido com foco em controle,
-                  segurança e organização. O projeto possui módulos de vendas,
-                  produção, estoque e financeiro, com autenticação, criação de
-                  conta, cadastro de produtos, controle de pedidos e validações
-                  no backend.
+                  Sistema de gestão para controlar vendas, produção, estoque e
+                  financeiro em um único painel, com autenticação segura,
+                  validações no backend e interface responsiva.
                 </p>
 
                 <ul>
                   <li>Login e criação de conta de administrador</li>
-                  <li>Autenticação com cookie HTTPOnly</li>
-                  <li>
-                    Registro de vendas com cliente, produto, forma de pagamento
-                    e data de retirada
-                  </li>
-                  <li>
-                    Controle de status do pedido: pendente, pago, entregue e
-                    cancelado
-                  </li>
-                  <li>Módulo de produção com total geral a produzir</li>
-                  <li>
-                    Controle de estoque com produtos, quantidades e alertas
-                  </li>
-                  <li>Financeiro com receita, custos e lucro estimado</li>
-                  <li>
-                    Cadastro de produto com preço, custo, estoque e imagem
-                  </li>
-                  <li>Interface responsiva com navegação por módulos</li>
+                  <li>Registro de vendas com cliente e produtos</li>
+                  <li>Controle de estoque, produção e financeiro</li>
+                  <li>Dashboard com receita, custos e lucro estimado</li>
+                  <li>Validação de dados no backend com Zod</li>
                 </ul>
 
                 <div class="tags">
-                  <span class="tag">Next.js</span>
-                  <span class="tag">React</span>
-                  <span class="tag">TypeScript</span>
-                  <span class="tag">Prisma</span>
-                  <span class="tag">SQLite</span>
-                  <span class="tag">Zod</span>
-                  <span class="tag">JWT</span>
-                  <span class="tag">Dashboard</span>
+                  <span>Next.js</span>
+                  <span>React</span>
+                  <span>TypeScript</span>
+                  <span>Prisma</span>
+                  <span>SQLite</span>
+                  <span>Zod</span>
+                  <span>JWT</span>
                 </div>
               </div>
             </article>
 
-            <article class="project">
-              <div class="project-img portfolio-preview">
-                <div class="portfolio-card"></div>
+            <article class="project-card simple-project">
+              <div class="portfolio-preview">
+                <span>HTML • CSS • JS • Docker</span>
+                <h3>Portfólio</h3>
+                <p>
+                  Projeto pessoal publicado com Docker, Nginx, SEO básico,
+                  Analytics e currículo em Markdown.
+                </p>
               </div>
 
               <div class="project-content">
-                <span class="project-badge">Projeto de apresentação</span>
+                <span class="project-badge">Apresentação</span>
 
                 <h3>Portfólio com Docker</h3>
 
                 <p>
-                  Página profissional criada para apresentar minhas habilidades,
-                  projetos e currículo em Markdown, rodando com Docker e Nginx.
-                  O projeto foi organizado com HTML, CSS e JavaScript separados.
+                  Página profissional criada para apresentar habilidades,
+                  projetos e currículo. O projeto possui HTML, CSS e JavaScript
+                  separados, documentação em Markdown e deploy com Docker.
                 </p>
 
                 <ul>
-                  <li>Página visual de apresentação</li>
+                  <li>HTML, CSS e JavaScript separados</li>
                   <li>Currículo em Markdown</li>
                   <li>README explicativo</li>
-                  <li>Dockerfile para execução</li>
-                  <li>CSS e JavaScript organizados em arquivos próprios</li>
-                  <li>Meta tags, SEO básico e Google Analytics</li>
+                  <li>Dockerfile com Nginx</li>
+                  <li>SEO básico e Google Analytics</li>
                 </ul>
 
                 <div class="tags">
-                  <span class="tag">HTML</span>
-                  <span class="tag">CSS</span>
-                  <span class="tag">JavaScript</span>
-                  <span class="tag">Markdown</span>
-                  <span class="tag">Docker</span>
-                  <span class="tag">Nginx</span>
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>JavaScript</span>
+                  <span>Markdown</span>
+                  <span>Docker</span>
+                  <span>Nginx</span>
                 </div>
               </div>
             </article>
           </div>
         </div>
       </section>
-      <section id="imagens-ampliadas">
+
+      <section id="galeria">
         <div class="container reveal">
           <div class="section-title">
-            <small>Galeria</small>
+            <span>Galeria</span>
             <h2>Imagens ampliadas</h2>
-            <div class="line"></div>
           </div>
 
-          <div class="gallery-actions">
+          <div class="gallery-toolbar">
             <p>
-              Veja todas as telas dos projetos em tamanho maior. Clique em
-              qualquer imagem para ampliar.
+              Veja todas as telas dos projetos. Clique em uma imagem para abrir
+              em tamanho maior.
             </p>
 
-            <button
-              class="btn btn-primary"
-              type="button"
-              onclick="alternarGaleria()"
-            >
-              Maximizar / minimizar imagens
+            <button class="btn btn-primary" type="button" id="toggleGallery">
+              Maximizar imagens
             </button>
           </div>
 
           <div class="gallery" id="gallery">
             <div class="gallery-group">
               <h3>LG Trambicagens</h3>
-
-              <div class="gallery-grid">
-                <button
-                  class="gallery-card"
-                  type="button"
-                  onclick="
-                    abrirImagem(
-                      'img/lg-trambicagens-1.png',
-                      'LG Trambicagens - Tela inicial',
-                    )
-                  "
-                >
-                  <img
-                    src="img/lg-trambicagens-1.png"
-                    alt="LG Trambicagens - Tela inicial"
-                  />
-                  <span>Tela inicial</span>
-                </button>
-
-                <button
-                  class="gallery-card"
-                  type="button"
-                  onclick="
-                    abrirImagem(
-                      'img/lg-trambicagens-2.png',
-                      'LG Trambicagens - Painel de pedidos',
-                    )
-                  "
-                >
-                  <img
-                    src="img/lg-trambicagens-2.png"
-                    alt="LG Trambicagens - Painel de pedidos"
-                  />
-                  <span>Painel de pedidos</span>
-                </button>
-
-                <button
-                  class="gallery-card"
-                  type="button"
-                  onclick="
-                    abrirImagem(
-                      'img/lg-trambicagens-3.png',
-                      'LG Trambicagens - Produto',
-                    )
-                  "
-                >
-                  <img
-                    src="img/lg-trambicagens-3.png"
-                    alt="LG Trambicagens - Produto"
-                  />
-                  <span>Produto</span>
-                </button>
-
-                <button
-                  class="gallery-card"
-                  type="button"
-                  onclick="
-                    abrirImagem(
-                      'img/lg-trambicagens-4.png',
-                      'LG Trambicagens - Filtros',
-                    )
-                  "
-                >
-                  <img
-                    src="img/lg-trambicagens-4.png"
-                    alt="LG Trambicagens - Filtros"
-                  />
-                  <span>Filtros</span>
-                </button>
-
-                <button
-                  class="gallery-card"
-                  type="button"
-                  onclick="
-                    abrirImagem(
-                      'img/lg-trambicagens-5.png',
-                      'LG Trambicagens - Resultados de pesquisa',
-                    )
-                  "
-                >
-                  <img
-                    src="img/lg-trambicagens-5.png"
-                    alt="LG Trambicagens - Resultados de pesquisa"
-                  />
-                  <span>Pesquisa</span>
-                </button>
-
-                <button
-                  class="gallery-card"
-                  type="button"
-                  onclick="
-                    abrirImagem(
-                      'img/lg-trambicagens-6.png',
-                      'LG Trambicagens - Carrinho',
-                    )
-                  "
-                >
-                  <img
-                    src="img/lg-trambicagens-6.png"
-                    alt="LG Trambicagens - Carrinho"
-                  />
-                  <span>Carrinho</span>
-                </button>
-
-                <button
-                  class="gallery-card"
-                  type="button"
-                  onclick="
-                    abrirImagem(
-                      'img/lg-trambicagens-7.png',
-                      'LG Trambicagens - Checkout',
-                    )
-                  "
-                >
-                  <img
-                    src="img/lg-trambicagens-7.png"
-                    alt="LG Trambicagens - Checkout"
-                  />
-                  <span>Checkout</span>
-                </button>
-
-                <button
-                  class="gallery-card"
-                  type="button"
-                  onclick="
-                    abrirImagem(
-                      'img/lg-trambicagens-8.png',
-                      'LG Trambicagens - Rastreamento de pedido',
-                    )
-                  "
-                >
-                  <img
-                    src="img/lg-trambicagens-8.png"
-                    alt="LG Trambicagens - Rastreamento de pedido"
-                  />
-                  <span>Pedido</span>
-                </button>
-
-                <button
-                  class="gallery-card"
-                  type="button"
-                  onclick="
-                    abrirImagem(
-                      'img/lg-trambicagens-9.png',
-                      'LG Trambicagens - Perfil',
-                    )
-                  "
-                >
-                  <img
-                    src="img/lg-trambicagens-9.png"
-                    alt="LG Trambicagens - Perfil"
-                  />
-                  <span>Perfil</span>
-                </button>
-
-                <button
-                  class="gallery-card"
-                  type="button"
-                  onclick="
-                    abrirImagem(
-                      'img/lg-trambicagens-10.png',
-                      'LG Trambicagens - Menu lateral',
-                    )
-                  "
-                >
-                  <img
-                    src="img/lg-trambicagens-10.png"
-                    alt="LG Trambicagens - Menu lateral"
-                  />
-                  <span>Menu lateral</span>
-                </button>
-              </div>
+              <div class="gallery-grid" id="galleryLg"></div>
             </div>
 
             <div class="gallery-group">
               <h3>VendaFácil</h3>
-
-              <div class="gallery-grid">
-                <button
-                  class="gallery-card"
-                  type="button"
-                  onclick="
-                    abrirImagem(
-                      'img/vendafacil-1.png',
-                      'VendaFácil - Criar conta',
-                    )
-                  "
-                >
-                  <img
-                    src="img/vendafacil-1.png"
-                    alt="VendaFácil - Criar conta"
-                  />
-                  <span>Criar conta</span>
-                </button>
-
-                <button
-                  class="gallery-card"
-                  type="button"
-                  onclick="
-                    abrirImagem('img/vendafacil-2.png', 'VendaFácil - Login')
-                  "
-                >
-                  <img src="img/vendafacil-2.png" alt="VendaFácil - Login" />
-                  <span>Login</span>
-                </button>
-
-                <button
-                  class="gallery-card"
-                  type="button"
-                  onclick="
-                    abrirImagem('img/vendafacil-3.png', 'VendaFácil - Vendas')
-                  "
-                >
-                  <img src="img/vendafacil-3.png" alt="VendaFácil - Vendas" />
-                  <span>Vendas</span>
-                </button>
-
-                <button
-                  class="gallery-card"
-                  type="button"
-                  onclick="
-                    abrirImagem(
-                      'img/vendafacil-4.png',
-                      'VendaFácil - Financeiro',
-                    )
-                  "
-                >
-                  <img
-                    src="img/vendafacil-4.png"
-                    alt="VendaFácil - Financeiro"
-                  />
-                  <span>Financeiro</span>
-                </button>
-
-                <button
-                  class="gallery-card"
-                  type="button"
-                  onclick="
-                    abrirImagem(
-                      'img/vendafacil-5.png',
-                      'VendaFácil - Registrar venda',
-                    )
-                  "
-                >
-                  <img
-                    src="img/vendafacil-5.png"
-                    alt="VendaFácil - Registrar venda"
-                  />
-                  <span>Registrar venda</span>
-                </button>
-
-                <button
-                  class="gallery-card"
-                  type="button"
-                  onclick="
-                    abrirImagem(
-                      'img/vendafacil-6.png',
-                      'VendaFácil - Cadastrar produto',
-                    )
-                  "
-                >
-                  <img
-                    src="img/vendafacil-6.png"
-                    alt="VendaFácil - Cadastrar produto"
-                  />
-                  <span>Cadastrar produto</span>
-                </button>
-
-                <button
-                  class="gallery-card"
-                  type="button"
-                  onclick="
-                    abrirImagem('img/vendafacil-7.png', 'VendaFácil - Produção')
-                  "
-                >
-                  <img src="img/vendafacil-7.png" alt="VendaFácil - Produção" />
-                  <span>Produção</span>
-                </button>
-
-                <button
-                  class="gallery-card"
-                  type="button"
-                  onclick="
-                    abrirImagem('img/vendafacil-8.png', 'VendaFácil - Estoque')
-                  "
-                >
-                  <img src="img/vendafacil-8.png" alt="VendaFácil - Estoque" />
-                  <span>Estoque</span>
-                </button>
-
-                <button
-                  class="gallery-card"
-                  type="button"
-                  onclick="
-                    abrirImagem(
-                      'img/vendafacil-9.png',
-                      'VendaFácil - Resumo financeiro',
-                    )
-                  "
-                >
-                  <img
-                    src="img/vendafacil-9.png"
-                    alt="VendaFácil - Resumo financeiro"
-                  />
-                  <span>Resumo financeiro</span>
-                </button>
-              </div>
+              <div class="gallery-grid" id="galleryVf"></div>
             </div>
           </div>
         </div>
       </section>
+
       <section id="contato">
         <div class="container reveal">
           <div class="contact-card">
+            <span>Contato</span>
+
             <h2>Vamos conversar?</h2>
 
             <p>
@@ -952,31 +604,29 @@
               Acesse meu GitHub, veja meu currículo ou entre em contato.
             </p>
 
-            <div class="social">
+            <div class="hero-actions">
               <a class="btn btn-primary" href="mailto:luizgus397@gmail.com">
                 Enviar email
               </a>
 
-              <a class="btn btn-dark" href="tel:+553199255745">Telefone</a>
-
-              <a
-                class="btn btn-dark"
-                href="https://www.linkedin.com/in/luiz-gustavo-66a3b93a0"
-                target="_blank"
-              >
-                LinkedIn
+              <a class="btn btn-secondary" href="tel:+553199255745">
+                Telefone
               </a>
 
               <a
-                class="btn btn-dark"
+                class="btn btn-outline"
                 href="https://github.com/luizgus1213"
                 target="_blank"
               >
                 GitHub
               </a>
 
-              <a class="btn btn-dark" href="curriculo.md" target="_blank">
-                Currículo
+              <a
+                class="btn btn-outline"
+                href="https://www.linkedin.com/in/luiz-gustavo-66a3b93a0"
+                target="_blank"
+              >
+                LinkedIn
               </a>
             </div>
           </div>
@@ -985,18 +635,45 @@
     </main>
 
     <div class="lightbox" id="lightbox" aria-hidden="true">
-      <button class="lightbox-close" type="button" onclick="fecharLightbox()">
+      <button
+        class="lightbox-close"
+        type="button"
+        id="lightboxClose"
+        aria-label="Fechar imagem"
+      >
         ×
       </button>
 
+      <button
+        class="lightbox-arrow lightbox-prev"
+        type="button"
+        id="lightboxPrev"
+        aria-label="Imagem anterior"
+      >
+        ‹
+      </button>
+
       <img id="lightboxImg" src="" alt="Imagem ampliada do projeto" />
+
+      <button
+        class="lightbox-arrow lightbox-next"
+        type="button"
+        id="lightboxNext"
+        aria-label="Próxima imagem"
+      >
+        ›
+      </button>
+
+      <p class="lightbox-caption" id="lightboxCaption"></p>
     </div>
 
     <footer>
-      © 2026 Luiz Gustavo — Portfólio criado com HTML, CSS, JavaScript, Markdown
-      e Docker.
+      <div class="container">
+        © 2026 Luiz Gustavo — Portfólio criado com HTML, CSS, JavaScript,
+        Markdown e Docker.
+      </div>
     </footer>
 
-    <script src="js/script.js?v=10"></script>
+    <script src="js/script.js?v=30"></script>
   </body>
 </html>
