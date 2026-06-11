@@ -98,7 +98,6 @@ function configurarCarousel(nome, trackId, dotsId, tituloProjeto) {
 
     img.addEventListener("error", () => {
       console.warn(`Imagem não encontrada: ${img.getAttribute("src")}`);
-      img.style.display = "none";
     });
 
     const dot = document.createElement("button");
@@ -221,7 +220,7 @@ function abrirImagem(src, alt) {
   lightbox.classList.add("active");
   lightbox.setAttribute("aria-hidden", "false");
 
-  enviarEventoAnalytics("abrir_imagem", "Imagem do projeto", alt || src);
+  enviarEventoAnalytics("abrir_imagem", "Imagem ampliada", alt || src);
 }
 
 function fecharLightbox() {
@@ -235,20 +234,20 @@ function fecharLightbox() {
   lightboxImg.src = "";
 }
 
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    fecharLightbox();
-  }
-});
+function alternarGaleria() {
+  const gallery = document.getElementById("gallery");
 
-const lightbox = document.getElementById("lightbox");
+  if (!gallery) return;
 
-if (lightbox) {
-  lightbox.addEventListener("click", (event) => {
-    if (event.target === lightbox) {
-      fecharLightbox();
-    }
-  });
+  gallery.classList.toggle("maximized");
+
+  const estaMaximizada = gallery.classList.contains("maximized");
+
+  enviarEventoAnalytics(
+    "alternar_galeria",
+    "Galeria de imagens",
+    estaMaximizada ? "Maximizar imagens" : "Minimizar imagens",
+  );
 }
 
 function enviarEventoAnalytics(nomeEvento, categoria, rotulo) {
@@ -269,11 +268,27 @@ document.querySelectorAll("a").forEach((link) => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  configurarCarousel("lg", "lgCarousel", "lgDots", "Projeto LG Trambicagens");
-  configurarCarousel("vf", "vfCarousel", "vfDots", "Projeto VendaFácil");
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    fecharLightbox();
+  }
 });
+
+const lightboxElemento = document.getElementById("lightbox");
+
+if (lightboxElemento) {
+  lightboxElemento.addEventListener("click", (event) => {
+    if (event.target === lightboxElemento) {
+      fecharLightbox();
+    }
+  });
+}
+
+configurarCarousel("lg", "lgCarousel", "lgDots", "Projeto LG Trambicagens");
+configurarCarousel("vf", "vfCarousel", "vfDots", "Projeto VendaFácil");
 
 window.mudarSlide = mudarSlide;
 window.abrirImagemAtual = abrirImagemAtual;
+window.abrirImagem = abrirImagem;
 window.fecharLightbox = fecharLightbox;
+window.alternarGaleria = alternarGaleria;

@@ -569,11 +569,7 @@
 
             <article class="project">
               <div class="project-img portfolio-preview">
-                <div class="portfolio-card">
-                  <span>HTML • CSS • JS • Docker</span>
-                  <h3>Portfólio</h3>
-                  <p>Projeto pessoal publicado com Nginx e Docker.</p>
-                </div>
+                <div class="portfolio-card"></div>
               </div>
 
               <div class="project-content">
@@ -609,7 +605,343 @@
           </div>
         </div>
       </section>
+      <section id="imagens-ampliadas">
+        <div class="container reveal">
+          <div class="section-title">
+            <small>Galeria</small>
+            <h2>Imagens ampliadas</h2>
+            <div class="line"></div>
+          </div>
 
+          <div class="gallery-actions">
+            <p>
+              Veja todas as telas dos projetos em tamanho maior. Clique em
+              qualquer imagem para ampliar.
+            </p>
+
+            <button
+              class="btn btn-primary"
+              type="button"
+              onclick="alternarGaleria()"
+            >
+              Maximizar / minimizar imagens
+            </button>
+          </div>
+
+          <div class="gallery" id="gallery">
+            <div class="gallery-group">
+              <h3>LG Trambicagens</h3>
+
+              <div class="gallery-grid">
+                <button
+                  class="gallery-card"
+                  type="button"
+                  onclick="
+                    abrirImagem(
+                      'img/lg-trambicagens-1.png',
+                      'LG Trambicagens - Tela inicial',
+                    )
+                  "
+                >
+                  <img
+                    src="img/lg-trambicagens-1.png"
+                    alt="LG Trambicagens - Tela inicial"
+                  />
+                  <span>Tela inicial</span>
+                </button>
+
+                <button
+                  class="gallery-card"
+                  type="button"
+                  onclick="
+                    abrirImagem(
+                      'img/lg-trambicagens-2.png',
+                      'LG Trambicagens - Painel de pedidos',
+                    )
+                  "
+                >
+                  <img
+                    src="img/lg-trambicagens-2.png"
+                    alt="LG Trambicagens - Painel de pedidos"
+                  />
+                  <span>Painel de pedidos</span>
+                </button>
+
+                <button
+                  class="gallery-card"
+                  type="button"
+                  onclick="
+                    abrirImagem(
+                      'img/lg-trambicagens-3.png',
+                      'LG Trambicagens - Produto',
+                    )
+                  "
+                >
+                  <img
+                    src="img/lg-trambicagens-3.png"
+                    alt="LG Trambicagens - Produto"
+                  />
+                  <span>Produto</span>
+                </button>
+
+                <button
+                  class="gallery-card"
+                  type="button"
+                  onclick="
+                    abrirImagem(
+                      'img/lg-trambicagens-4.png',
+                      'LG Trambicagens - Filtros',
+                    )
+                  "
+                >
+                  <img
+                    src="img/lg-trambicagens-4.png"
+                    alt="LG Trambicagens - Filtros"
+                  />
+                  <span>Filtros</span>
+                </button>
+
+                <button
+                  class="gallery-card"
+                  type="button"
+                  onclick="
+                    abrirImagem(
+                      'img/lg-trambicagens-5.png',
+                      'LG Trambicagens - Resultados de pesquisa',
+                    )
+                  "
+                >
+                  <img
+                    src="img/lg-trambicagens-5.png"
+                    alt="LG Trambicagens - Resultados de pesquisa"
+                  />
+                  <span>Pesquisa</span>
+                </button>
+
+                <button
+                  class="gallery-card"
+                  type="button"
+                  onclick="
+                    abrirImagem(
+                      'img/lg-trambicagens-6.png',
+                      'LG Trambicagens - Carrinho',
+                    )
+                  "
+                >
+                  <img
+                    src="img/lg-trambicagens-6.png"
+                    alt="LG Trambicagens - Carrinho"
+                  />
+                  <span>Carrinho</span>
+                </button>
+
+                <button
+                  class="gallery-card"
+                  type="button"
+                  onclick="
+                    abrirImagem(
+                      'img/lg-trambicagens-7.png',
+                      'LG Trambicagens - Checkout',
+                    )
+                  "
+                >
+                  <img
+                    src="img/lg-trambicagens-7.png"
+                    alt="LG Trambicagens - Checkout"
+                  />
+                  <span>Checkout</span>
+                </button>
+
+                <button
+                  class="gallery-card"
+                  type="button"
+                  onclick="
+                    abrirImagem(
+                      'img/lg-trambicagens-8.png',
+                      'LG Trambicagens - Rastreamento de pedido',
+                    )
+                  "
+                >
+                  <img
+                    src="img/lg-trambicagens-8.png"
+                    alt="LG Trambicagens - Rastreamento de pedido"
+                  />
+                  <span>Pedido</span>
+                </button>
+
+                <button
+                  class="gallery-card"
+                  type="button"
+                  onclick="
+                    abrirImagem(
+                      'img/lg-trambicagens-9.png',
+                      'LG Trambicagens - Perfil',
+                    )
+                  "
+                >
+                  <img
+                    src="img/lg-trambicagens-9.png"
+                    alt="LG Trambicagens - Perfil"
+                  />
+                  <span>Perfil</span>
+                </button>
+
+                <button
+                  class="gallery-card"
+                  type="button"
+                  onclick="
+                    abrirImagem(
+                      'img/lg-trambicagens-10.png',
+                      'LG Trambicagens - Menu lateral',
+                    )
+                  "
+                >
+                  <img
+                    src="img/lg-trambicagens-10.png"
+                    alt="LG Trambicagens - Menu lateral"
+                  />
+                  <span>Menu lateral</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="gallery-group">
+              <h3>VendaFácil</h3>
+
+              <div class="gallery-grid">
+                <button
+                  class="gallery-card"
+                  type="button"
+                  onclick="
+                    abrirImagem(
+                      'img/vendafacil-1.png',
+                      'VendaFácil - Criar conta',
+                    )
+                  "
+                >
+                  <img
+                    src="img/vendafacil-1.png"
+                    alt="VendaFácil - Criar conta"
+                  />
+                  <span>Criar conta</span>
+                </button>
+
+                <button
+                  class="gallery-card"
+                  type="button"
+                  onclick="
+                    abrirImagem('img/vendafacil-2.png', 'VendaFácil - Login')
+                  "
+                >
+                  <img src="img/vendafacil-2.png" alt="VendaFácil - Login" />
+                  <span>Login</span>
+                </button>
+
+                <button
+                  class="gallery-card"
+                  type="button"
+                  onclick="
+                    abrirImagem('img/vendafacil-3.png', 'VendaFácil - Vendas')
+                  "
+                >
+                  <img src="img/vendafacil-3.png" alt="VendaFácil - Vendas" />
+                  <span>Vendas</span>
+                </button>
+
+                <button
+                  class="gallery-card"
+                  type="button"
+                  onclick="
+                    abrirImagem(
+                      'img/vendafacil-4.png',
+                      'VendaFácil - Financeiro',
+                    )
+                  "
+                >
+                  <img
+                    src="img/vendafacil-4.png"
+                    alt="VendaFácil - Financeiro"
+                  />
+                  <span>Financeiro</span>
+                </button>
+
+                <button
+                  class="gallery-card"
+                  type="button"
+                  onclick="
+                    abrirImagem(
+                      'img/vendafacil-5.png',
+                      'VendaFácil - Registrar venda',
+                    )
+                  "
+                >
+                  <img
+                    src="img/vendafacil-5.png"
+                    alt="VendaFácil - Registrar venda"
+                  />
+                  <span>Registrar venda</span>
+                </button>
+
+                <button
+                  class="gallery-card"
+                  type="button"
+                  onclick="
+                    abrirImagem(
+                      'img/vendafacil-6.png',
+                      'VendaFácil - Cadastrar produto',
+                    )
+                  "
+                >
+                  <img
+                    src="img/vendafacil-6.png"
+                    alt="VendaFácil - Cadastrar produto"
+                  />
+                  <span>Cadastrar produto</span>
+                </button>
+
+                <button
+                  class="gallery-card"
+                  type="button"
+                  onclick="
+                    abrirImagem('img/vendafacil-7.png', 'VendaFácil - Produção')
+                  "
+                >
+                  <img src="img/vendafacil-7.png" alt="VendaFácil - Produção" />
+                  <span>Produção</span>
+                </button>
+
+                <button
+                  class="gallery-card"
+                  type="button"
+                  onclick="
+                    abrirImagem('img/vendafacil-8.png', 'VendaFácil - Estoque')
+                  "
+                >
+                  <img src="img/vendafacil-8.png" alt="VendaFácil - Estoque" />
+                  <span>Estoque</span>
+                </button>
+
+                <button
+                  class="gallery-card"
+                  type="button"
+                  onclick="
+                    abrirImagem(
+                      'img/vendafacil-9.png',
+                      'VendaFácil - Resumo financeiro',
+                    )
+                  "
+                >
+                  <img
+                    src="img/vendafacil-9.png"
+                    alt="VendaFácil - Resumo financeiro"
+                  />
+                  <span>Resumo financeiro</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section id="contato">
         <div class="container reveal">
           <div class="contact-card">
