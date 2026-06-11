@@ -6,58 +6,53 @@
 
     <title>Portfólio - Luiz Gustavo | Desenvolvedor Full Stack Júnior</title>
 
-    <!-- SEO básico -->
     <meta
       name="description"
-      content="Portfólio profissional de Luiz Gustavo, Desenvolvedor Full Stack Júnior com projetos em React, Next.js, TypeScript, Node.js, SQLite, Sequelize, Docker e APIs."
+      content="Portfólio profissional de Luiz Gustavo, Desenvolvedor Full Stack Júnior com projetos em React, Next.js, TypeScript, Node.js, SQLite, Sequelize, Prisma, Docker e APIs."
     />
 
     <meta
       name="keywords"
-      content="Luiz Gustavo, Desenvolvedor Full Stack Júnior, React, Next.js, TypeScript, Node.js, SQLite, Sequelize, Docker, HTML, CSS, JavaScript, Portfólio"
+      content="Luiz Gustavo, Desenvolvedor Full Stack Júnior, React, Next.js, TypeScript, Node.js, SQLite, Sequelize, Prisma, Docker, HTML, CSS, JavaScript, Portfólio"
     />
 
     <meta name="author" content="Luiz Gustavo" />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#080808" />
 
-    <!-- Troque esse link quando publicar seu site -->
-    <link rel="canonical" href="https://seu-dominio.com/" />
+    <link rel="canonical" href="https://luizgustavo.ignum.com.br/" />
 
-    <!-- Meta tags para redes sociais: WhatsApp, Facebook, LinkedIn -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Portfólio - Luiz Gustavo" />
 
     <meta
       property="og:description"
-      content="Conheça o portfólio de Luiz Gustavo, Desenvolvedor Full Stack Júnior com projetos em React, Next.js, TypeScript, Node.js, SQLite, Sequelize e Docker."
+      content="Conheça o portfólio de Luiz Gustavo, Desenvolvedor Full Stack Júnior com projetos em React, Next.js, TypeScript, Node.js, SQLite, Sequelize, Prisma e Docker."
     />
 
-    <meta property="og:url" content="https://seu-dominio.com/" />
+    <meta property="og:url" content="https://luizgustavo.ignum.com.br/" />
 
     <meta
       property="og:image"
-      content="https://seu-dominio.com/img/lg-trambicagens-1.png"
+      content="https://luizgustavo.ignum.com.br/img/lg-trambicagens-3.png"
     />
 
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:site_name" content="Portfólio Luiz Gustavo" />
 
-    <!-- Meta tags para Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Portfólio - Luiz Gustavo" />
 
     <meta
       name="twitter:description"
-      content="Desenvolvedor Full Stack Júnior com projetos em React, Next.js, TypeScript, Node.js, SQLite, Sequelize e Docker."
+      content="Desenvolvedor Full Stack Júnior com projetos em React, Next.js, TypeScript, Node.js, SQLite, Sequelize, Prisma e Docker."
     />
 
     <meta
       name="twitter:image"
-      content="https://seu-dominio.com/img/lg-trambicagens-1.png"
+      content="https://luizgustavo.ignum.com.br/img/lg-trambicagens-3.png"
     />
 
-    <!-- Dados estruturados para o Google entender melhor o site -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -72,7 +67,7 @@
           "addressRegion": "MG",
           "addressCountry": "BR"
         },
-        "url": "https://seu-dominio.com/",
+        "url": "https://luizgustavo.ignum.com.br/",
         "sameAs": [
           "https://github.com/luizgus1213",
           "https://www.linkedin.com/in/luiz-gustavo-66a3b93a0"
@@ -88,6 +83,7 @@
           "Express",
           "SQLite",
           "Sequelize",
+          "Prisma",
           "Docker",
           "Git",
           "GitHub"
@@ -111,7 +107,6 @@
       gtag("config", "G-P7DFW6P5BD");
     </script>
 
-    <!-- Ícones das tecnologias -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
@@ -124,7 +119,9 @@
     <header>
       <div class="container">
         <nav>
-          <div class="logo">LUIZ<span>GUSTAVO</span></div>
+          <a class="logo" href="#inicio" aria-label="Voltar para o início">
+            LUIZ<span>GUSTAVO</span>
+          </a>
 
           <div class="menu">
             <a href="#inicio">Início</a>
@@ -149,8 +146,8 @@
 
             <p>
               Crio aplicações web com foco em interfaces modernas, sistemas
-              funcionais, autenticação, banco de dados, APIs, SEO e experiência
-              do usuário.
+              funcionais, autenticação, banco de dados, APIs, SEO e boa
+              experiência para o usuário.
             </p>
 
             <div class="social">
@@ -198,13 +195,14 @@
             <div class="about-text">
               <p>
                 Sou Desenvolvedor Full Stack Júnior, focado em construir
-                sistemas web completos, objetivos e bem organizados.
+                sistemas web completos, objetivos, responsivos e bem
+                organizados.
               </p>
 
               <p>
                 Tenho experiência com React, Next.js, TypeScript, Node.js,
-                Express, SQLite e Sequelize, criando desde a interface até o
-                backend.
+                Express, SQLite, Sequelize, Prisma e Docker, criando desde a
+                interface até o backend.
               </p>
 
               <p>
@@ -306,6 +304,11 @@
             </div>
 
             <div class="skill">
+              <i class="devicon-prisma-original icon"></i>
+              <strong>Prisma</strong>
+            </div>
+
+            <div class="skill">
               <i class="devicon-docker-plain icon"></i>
               <strong>Docker</strong>
             </div>
@@ -317,6 +320,7 @@
           </div>
         </div>
       </section>
+
       <section id="projetos">
         <div class="container reveal">
           <div class="section-title">
@@ -330,53 +334,43 @@
               <div class="project-img carousel">
                 <div class="carousel-track" id="lgCarousel">
                   <img
-                    src="img/lg-trambicagens-1.png"
-                    alt="Tela de resultados de pesquisa do sistema LG Trambicagens"
-                  />
-
-                  <img
-                    src="img/lg-trambicagens-2.png"
-                    alt="Tela do carrinho do sistema LG Trambicagens"
-                  />
-
-                  <img
                     src="img/lg-trambicagens-3.png"
-                    alt="Tela de checkout do sistema LG Trambicagens"
-                  />
-
-                  <img
-                    src="img/lg-trambicagens-4.png"
-                    alt="Tela de acompanhamento de pedido do sistema LG Trambicagens"
-                  />
-
-                  <img
-                    src="img/lg-trambicagens-5.png"
-                    alt="Tela de perfil do usuário do sistema LG Trambicagens"
-                  />
-
-                  <img
-                    src="img/lg-trambicagens-6.png"
-                    alt="Menu lateral do sistema LG Trambicagens"
-                  />
-
-                  <img
-                    src="img/lg-trambicagens-7.png"
-                    alt="Painel administrativo de pedidos do sistema LG Trambicagens"
-                  />
-
-                  <img
-                    src="img/lg-trambicagens-8.png"
-                    alt="Página inicial do sistema LG Trambicagens"
-                  />
-
-                  <img
-                    src="img/lg-trambicagens-9.png"
                     alt="Página individual de produto do sistema LG Trambicagens"
                   />
 
                   <img
-                    src="img/lg-trambicagens-10.png"
+                    src="img/lg-trambicagens-4.png"
                     alt="Filtros de pesquisa do sistema LG Trambicagens"
+                  />
+
+                  <img
+                    src="img/lg-trambicagens-5.png"
+                    alt="Tela de resultados de pesquisa do sistema LG Trambicagens"
+                  />
+
+                  <img
+                    src="img/lg-trambicagens-6.png"
+                    alt="Tela do carrinho do sistema LG Trambicagens"
+                  />
+
+                  <img
+                    src="img/lg-trambicagens-7.png"
+                    alt="Tela de checkout do sistema LG Trambicagens"
+                  />
+
+                  <img
+                    src="img/lg-trambicagens-8.png"
+                    alt="Tela de acompanhamento de pedido do sistema LG Trambicagens"
+                  />
+
+                  <img
+                    src="img/lg-trambicagens-9.png"
+                    alt="Tela de perfil do usuário do sistema LG Trambicagens"
+                  />
+
+                  <img
+                    src="img/lg-trambicagens-10.png"
+                    alt="Menu lateral do sistema LG Trambicagens"
                   />
                 </div>
 
@@ -399,9 +393,19 @@
                 </button>
 
                 <div class="carousel-dots" id="lgDots"></div>
+
+                <button
+                  class="view-image"
+                  type="button"
+                  onclick="abrirImagemAtual('lg')"
+                >
+                  Ver imagem maior
+                </button>
               </div>
 
               <div class="project-content">
+                <span class="project-badge">Projeto principal</span>
+
                 <h3>LG Trambicagens</h3>
 
                 <p>
@@ -441,48 +445,48 @@
               <div class="project-img carousel">
                 <div class="carousel-track" id="vfCarousel">
                   <img
-                    src="img/vendafacil-1.png"
-                    alt="Tela de login do sistema VendaFácil Pro"
+                    src="img/vendafacil-2.png"
+                    alt="Tela de login do sistema VendaFácil "
                   />
 
                   <img
-                    src="img/vendafacil-2.png"
-                    alt="Tela de criação de conta do sistema VendaFácil Pro"
+                    src="img/vendafacil-1.png"
+                    alt="Tela de criação de conta do sistema VendaFácil "
                   />
 
                   <img
                     src="img/vendafacil-3.png"
-                    alt="Painel principal de vendas do VendaFácil Pro"
+                    alt="Painel principal de vendas do VendaFácil "
                   />
 
                   <img
                     src="img/vendafacil-4.png"
-                    alt="Tela de registro de venda do VendaFácil Pro"
-                  />
-
-                  <img
-                    src="img/vendafacil-5.png"
-                    alt="Tela de produção do VendaFácil Pro"
-                  />
-
-                  <img
-                    src="img/vendafacil-6.png"
-                    alt="Tela de estoque do VendaFácil Pro"
-                  />
-
-                  <img
-                    src="img/vendafacil-7.png"
-                    alt="Tela financeira do VendaFácil Pro"
+                    alt="Tela de registro de venda do VendaFácil "
                   />
 
                   <img
                     src="img/vendafacil-8.png"
-                    alt="Tela de cadastro de produto do VendaFácil Pro"
+                    alt="Modal de registro de venda do VendaFácil "
                   />
 
                   <img
                     src="img/vendafacil-9.png"
-                    alt="Tela de venda com produtos do VendaFácil Pro"
+                    alt="Modal de cadastro de duto do VendaFácil "
+                  />
+
+                  <img
+                    src="img/vendafacil-5.png"
+                    alt="Tela de dução do VendaFácil "
+                  />
+
+                  <img
+                    src="img/vendafacil-6.png"
+                    alt="Tela de estoque do VendaFácil "
+                  />
+
+                  <img
+                    src="img/vendafacil-7.png"
+                    alt="Tela financeira do VendaFácil "
                   />
                 </div>
 
@@ -505,9 +509,19 @@
                 </button>
 
                 <div class="carousel-dots" id="vfDots"></div>
+
+                <button
+                  class="view-image"
+                  type="button"
+                  onclick="abrirImagemAtual('vf')"
+                >
+                  Ver imagem maior
+                </button>
               </div>
 
               <div class="project-content">
+                <span class="project-badge">Sistema de gestão</span>
+
                 <h3>VendaFácil Pro</h3>
 
                 <p>
@@ -554,15 +568,17 @@
             </article>
 
             <article class="project">
-              <div class="project-img">
-                <img
-                  src="img/portfolio.png"
-                  alt="Portfólio com Docker"
-                  onerror="this.style.display = 'none'"
-                />
+              <div class="project-img portfolio-preview">
+                <div class="portfolio-card">
+                  <span>HTML • CSS • JS • Docker</span>
+                  <h3>Portfólio</h3>
+                  <p>Projeto pessoal publicado com Nginx e Docker.</p>
+                </div>
               </div>
 
               <div class="project-content">
+                <span class="project-badge">Projeto de apresentação</span>
+
                 <h3>Portfólio com Docker</h3>
 
                 <p>
@@ -577,6 +593,7 @@
                   <li>README explicativo</li>
                   <li>Dockerfile para execução</li>
                   <li>CSS e JavaScript organizados em arquivos próprios</li>
+                  <li>Meta tags, SEO básico e Google Analytics</li>
                 </ul>
 
                 <div class="tags">
@@ -608,7 +625,7 @@
                 Enviar email
               </a>
 
-              <a class="btn btn-dark" href="tel:+553199255745"> Telefone </a>
+              <a class="btn btn-dark" href="tel:+553199255745">Telefone</a>
 
               <a
                 class="btn btn-dark"
@@ -634,6 +651,14 @@
         </div>
       </section>
     </main>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button class="lightbox-close" type="button" onclick="fecharLightbox()">
+        ×
+      </button>
+
+      <img id="lightboxImg" src="" alt="Imagem ampliada do projeto" />
+    </div>
 
     <footer>
       © 2026 Luiz Gustavo — Portfólio criado com HTML, CSS, JavaScript, Markdown
