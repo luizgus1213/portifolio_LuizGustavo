@@ -192,6 +192,7 @@ O projeto foi desenvolvido com HTML, CSS, JavaScript, Markdown, Docker e Nginx, 
 ## Conhecimentos Práticos
 
 - Criação de interfaces responsivas
+- Correção de bugs visuais em layout mobile
 - Desenvolvimento de APIs
 - Autenticação de usuários
 - Validação de dados no backend

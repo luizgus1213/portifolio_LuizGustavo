@@ -21,6 +21,8 @@ A página principal apresenta minhas informações profissionais, tecnologias qu
 - Google Analytics
 - Carrossel de imagens
 - Visualização ampliada das imagens
+- Correção da galeria maximizada no celular
+- Menu responsivo para celular
 - Currículo em Markdown
 - Execução com Docker e Nginx
 
@@ -47,6 +49,7 @@ O portfólio demonstra conhecimentos em:
 - Nginx
 - Markdown
 - Organização de projeto web
+- Correção de layout mobile
 
 ---
 
@@ -188,6 +191,17 @@ Projeto criado para apresentar minhas habilidades, projetos e currículo profiss
 - Markdown
 - Docker
 - Nginx
+
+---
+
+## Correções e melhorias recentes
+
+- Ajuste da galeria maximizada para celular, evitando corte ou limitação ruim das imagens.
+- Criação de menu mobile com botão hamburguer.
+- Melhoria de acessibilidade com foco visível e atributos `aria`.
+- Links externos com `rel="noopener noreferrer"`.
+- Melhoria das meta tags de compartilhamento com texto alternativo da imagem.
+- Google Analytics mantido com eventos personalizados.
 
 ---
 

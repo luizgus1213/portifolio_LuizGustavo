@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="language" content="pt-BR" />
+    <meta name="format-detection" content="telephone=yes" />
 
     <title>Portfólio - Luiz Gustavo | Desenvolvedor Full Stack Júnior</title>
 
@@ -19,6 +21,7 @@
     <meta name="author" content="Luiz Gustavo" />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#080808" />
+    <meta name="color-scheme" content="dark" />
 
     <link rel="canonical" href="https://luizgustavo.ignum.com.br/" />
 
@@ -36,12 +39,19 @@
       property="og:image"
       content="https://luizgustavo.ignum.com.br/img/lg-trambicagens-1.png"
     />
+    <meta
+      property="og:image:alt"
+      content="Prévia do projeto LG Trambicagens no portfólio de Luiz Gustavo"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:site_name" content="Portfólio Luiz Gustavo" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Portfólio - Luiz Gustavo" />
+    <meta name="twitter:url" content="https://luizgustavo.ignum.com.br/" />
 
     <meta
       name="twitter:description"
@@ -51,6 +61,10 @@
     <meta
       name="twitter:image"
       content="https://luizgustavo.ignum.com.br/img/lg-trambicagens-1.png"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Prévia do projeto LG Trambicagens no portfólio de Luiz Gustavo"
     />
 
     <script type="application/ld+json">
@@ -91,6 +105,9 @@
       }
     </script>
 
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-P7DFW6P5BD"
@@ -104,7 +121,7 @@
       }
 
       gtag("js", new Date());
-      gtag("config", "G-P7DFW6P5BD");
+      gtag("config", "G-P7DFW6P5BD", { anonymize_ip: true });
     </script>
 
     <link
@@ -112,7 +129,7 @@
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
     />
 
-    <link rel="stylesheet" href="css/style.css?v=41" />
+    <link rel="stylesheet" href="css/style.css?v=42" />
   </head>
 
   <body>
@@ -123,11 +140,25 @@
             LUIZ<span>GUSTAVO</span>
           </a>
 
-          <div class="menu">
+          <button
+            class="menu-toggle"
+            type="button"
+            id="menuToggle"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="menuPrincipal"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div class="menu" id="menuPrincipal">
             <a href="#inicio">Início</a>
             <a href="#sobre">Sobre</a>
             <a href="#tecnologias">Tecnologias</a>
             <a href="#projetos">Projetos</a>
+            <a href="#galeria">Galeria</a>
             <a href="#contato">Contato</a>
           </div>
         </nav>
@@ -153,7 +184,7 @@
             <div class="social">
               <a class="btn btn-primary" href="#projetos">Ver projetos</a>
 
-              <a class="btn btn-dark" href="curriculo.md" target="_blank">
+              <a class="btn btn-dark" href="curriculo.md" target="_blank" rel="noopener noreferrer">
                 Currículo Markdown
               </a>
 
@@ -164,7 +195,7 @@
               <a
                 class="btn btn-dark"
                 href="https://github.com/luizgus1213"
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
               >
                 GitHub
               </a>
@@ -172,7 +203,7 @@
               <a
                 class="btn btn-dark"
                 href="https://www.linkedin.com/in/luiz-gustavo-66a3b93a0"
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
               >
                 LinkedIn
               </a>
@@ -226,7 +257,7 @@
                   <strong>LinkedIn:</strong>
                   <a
                     href="https://www.linkedin.com/in/luiz-gustavo-66a3b93a0"
-                    target="_blank"
+                    target="_blank" rel="noopener noreferrer"
                   >
                     Luiz Gustavo
                   </a>
@@ -234,11 +265,37 @@
 
                 <div>
                   <strong>GitHub:</strong>
-                  <a href="https://github.com/luizgus1213" target="_blank">
+                  <a href="https://github.com/luizgus1213" target="_blank" rel="noopener noreferrer">
                     luizgus1213
                   </a>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="highlights" aria-label="Destaques profissionais">
+        <div class="container reveal">
+          <div class="highlight-grid">
+            <div class="highlight-card">
+              <strong>2+</strong>
+              <span>Sistemas completos apresentados</span>
+            </div>
+
+            <div class="highlight-card">
+              <strong>15+</strong>
+              <span>Tecnologias usadas nos projetos</span>
+            </div>
+
+            <div class="highlight-card">
+              <strong>100+</strong>
+              <span>Funcionalidades implementadas</span>
+            </div>
+
+            <div class="highlight-card">
+              <strong>SEO</strong>
+              <span>Meta tags, redes sociais e Analytics</span>
             </div>
           </div>
         </div>
@@ -587,8 +644,8 @@
 
           <div class="gallery-actions">
             <p>
-              Todas as telas dos projetos em uma área separada. Clique em uma
-              imagem para abrir maior.
+              Todas as telas dos projetos em uma área separada. No celular,
+              o modo maximizado mantém a imagem inteira visível sem cortar.
             </p>
 
             <button class="btn btn-primary" type="button" id="toggleGallery">
@@ -630,7 +687,7 @@
               <a
                 class="btn btn-dark"
                 href="https://www.linkedin.com/in/luiz-gustavo-66a3b93a0"
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
               >
                 LinkedIn
               </a>
@@ -638,12 +695,12 @@
               <a
                 class="btn btn-dark"
                 href="https://github.com/luizgus1213"
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
               >
                 GitHub
               </a>
 
-              <a class="btn btn-dark" href="curriculo.md" target="_blank">
+              <a class="btn btn-dark" href="curriculo.md" target="_blank" rel="noopener noreferrer">
                 Currículo
               </a>
             </div>
@@ -690,6 +747,6 @@
       e Docker.
     </footer>
 
-    <script src="js/script.js?v=41"></script>
+    <script src="js/script.js?v=42"></script>
   </body>
 </html>

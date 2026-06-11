@@ -124,6 +124,7 @@ let lightboxLista = [];
 let lightboxIndex = 0;
 
 document.addEventListener("DOMContentLoaded", () => {
+  iniciarMenuMobile();
   iniciarDigitacao();
   iniciarReveal();
   iniciarCarrosseis();
@@ -132,6 +133,39 @@ document.addEventListener("DOMContentLoaded", () => {
   iniciarLightbox();
   iniciarAnalyticsLinks();
 });
+
+
+function iniciarMenuMobile() {
+  const menu = document.getElementById("menuPrincipal");
+  const toggleButton = document.getElementById("menuToggle");
+
+  if (!menu || !toggleButton) return;
+
+  function fecharMenu() {
+    menu.classList.remove("open");
+    toggleButton.classList.remove("active");
+    toggleButton.setAttribute("aria-expanded", "false");
+    toggleButton.setAttribute("aria-label", "Abrir menu");
+  }
+
+  toggleButton.addEventListener("click", () => {
+    const aberto = menu.classList.toggle("open");
+
+    toggleButton.classList.toggle("active", aberto);
+    toggleButton.setAttribute("aria-expanded", String(aberto));
+    toggleButton.setAttribute("aria-label", aberto ? "Fechar menu" : "Abrir menu");
+  });
+
+  menu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", fecharMenu);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      fecharMenu();
+    }
+  });
+}
 
 function iniciarDigitacao() {
   const typing = document.getElementById("typing");
@@ -359,6 +393,10 @@ function iniciarGaleria() {
 
     const maximizada = gallery.classList.contains("maximized");
 
+    if (maximizada && window.innerWidth <= 860) {
+      gallery.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
     toggleButton.textContent = maximizada
       ? "Minimizar imagens"
       : "Maximizar imagens";
@@ -480,6 +518,10 @@ function iniciarAnalyticsLinks() {
       const href = link.getAttribute("href");
 
       enviarEventoAnalytics("clique_link", "Links do portfólio", texto || href);
+
+      if (href && href.startsWith("http")) {
+        enviarEventoAnalytics("clique_link_externo", "Links externos", href);
+      }
     });
   });
 }
