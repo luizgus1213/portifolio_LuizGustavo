@@ -112,7 +112,7 @@ O projeto foi criado para simular uma loja virtual completa, com funcionalidades
 
 ---
 
-## VendaFácil Pro
+## VendaFácil
 
 Sistema de gestão de vendas desenvolvido com **React, Next.js, TypeScript, Prisma, SQLite e Zod**.
 
