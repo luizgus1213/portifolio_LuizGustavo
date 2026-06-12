@@ -1,3 +1,8 @@
+document.body.classList.add("js-loaded");
+
+document.querySelectorAll(".reveal").forEach((element) => {
+  element.classList.add("active");
+});
 const palavras = [
   "Full Stack Júnior",
   "React",
@@ -134,7 +139,6 @@ document.addEventListener("DOMContentLoaded", () => {
   iniciarAnalyticsLinks();
 });
 
-
 function iniciarMenuMobile() {
   const menu = document.getElementById("menuPrincipal");
   const toggleButton = document.getElementById("menuToggle");
@@ -153,7 +157,10 @@ function iniciarMenuMobile() {
 
     toggleButton.classList.toggle("active", aberto);
     toggleButton.setAttribute("aria-expanded", String(aberto));
-    toggleButton.setAttribute("aria-label", aberto ? "Fechar menu" : "Abrir menu");
+    toggleButton.setAttribute(
+      "aria-label",
+      aberto ? "Fechar menu" : "Abrir menu",
+    );
   });
 
   menu.querySelectorAll("a").forEach((link) => {

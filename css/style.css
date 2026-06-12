@@ -1203,3 +1203,18 @@ footer {
     transition-duration: 0.01ms !important;
   }
 }
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+body.js-loaded .reveal {
+  opacity: 0;
+  transform: translateY(45px);
+  transition: 0.8s ease;
+}
+
+body.js-loaded .reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
