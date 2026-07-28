@@ -9,6 +9,8 @@ const palavras = [
   "Next.js",
   "TypeScript",
   "Node.js",
+  "Socket.IO",
+  "PostgreSQL",
   "SEO",
   "Docker",
 ];
@@ -67,6 +69,38 @@ const projetos = {
         src: "img/lg-trambicagens-10.png",
         alt: "LG Trambicagens - Menu lateral",
         nome: "Menu lateral",
+      },
+    ],
+  },
+
+  chat: {
+    titulo: "LG Chat",
+    galeriaId: "galleryChat",
+    imagens: [
+      {
+        src: "img/Lgchat1.png",
+        alt: "LG Chat - Captura de tela 1",
+        nome: "Tela 1",
+      },
+      {
+        src: "img/Lgchat2.png",
+        alt: "LG Chat - Captura de tela 2",
+        nome: "Tela 2",
+      },
+      {
+        src: "img/Lgchat3.png",
+        alt: "LG Chat - Captura de tela 3",
+        nome: "Tela 3",
+      },
+      {
+        src: "img/Lgchat4.png",
+        alt: "LG Chat - Captura de tela 4",
+        nome: "Tela 4",
+      },
+      {
+        src: "img/Lgchat5.png",
+        alt: "LG Chat - Captura de tela 5",
+        nome: "Tela 5",
       },
     ],
   },

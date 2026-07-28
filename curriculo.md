@@ -13,7 +13,7 @@ Portfólio: https://luizgustavo.ignum.com.br/
 
 ## Resumo Profissional
 
-Desenvolvedor Full Stack Júnior com experiência no desenvolvimento de aplicações web modernas, utilizando React, Next.js, TypeScript, Node.js, Express, SQLite, Sequelize, Prisma, Zod e Docker.
+Desenvolvedor Full Stack Júnior com experiência no desenvolvimento de aplicações web modernas e em tempo real, utilizando React, Next.js, Vite, TypeScript, Node.js, Express, Socket.IO, PostgreSQL, SQLite, Sequelize, Prisma, Zod e Docker.
 
 Tenho prática na criação de interfaces responsivas, desenvolvimento de APIs, autenticação de usuários, validação de dados no backend, upload de imagens, carrinho de compras, sistema de pedidos, controle de estoque, gestão de vendas, dashboard, financeiro e integração entre frontend e backend.
 
@@ -29,8 +29,11 @@ Busco oportunidades para atuar no desenvolvimento de sistemas web, contribuindo 
 - TypeScript
 - React
 - Next.js
+- Vite
 - Node.js
 - Express
+- Socket.IO
+- PostgreSQL
 - SQLite
 - Sequelize
 - Prisma
@@ -98,6 +101,49 @@ O projeto foi criado com foco em simular uma loja virtual funcional, com cadastr
 - JWT
 - Bcrypt
 - Multer
+
+---
+
+## LG Chat
+
+Aplicação de mensagens em tempo real desenvolvida com React, Vite, TypeScript, Node.js, Express, Socket.IO, PostgreSQL, Sequelize e Zod.
+
+O projeto foi criado com foco em comunicação instantânea, segurança, organização do backend e experiência responsiva em diferentes dispositivos.
+
+### Funcionalidades desenvolvidas
+
+- Cadastro, login e verificação de email
+- Autenticação com cookies HTTPOnly e proteção CSRF
+- Conversas privadas
+- Criação e gerenciamento de grupos
+- Permissões de proprietário, administrador e membro
+- Mensagens em tempo real com Socket.IO
+- Envio de imagens, vídeos, áudios e anexos
+- Status com visualizações
+- Mensagens favoritas
+- Conversas arquivadas
+- Bloqueio de usuários
+- Marcação de mensagens como lidas
+- Paginação do histórico de mensagens
+- Reenvio de mensagens após falha ou uso offline
+- Validação de dados no backend com Zod
+- Rate limit, headers de segurança e tratamento de erros
+- Interface responsiva desenvolvida com React e Vite
+
+### Tecnologias usadas no projeto
+
+- React
+- Vite
+- TypeScript
+- Node.js
+- Express
+- Socket.IO
+- PostgreSQL
+- Sequelize
+- Zod
+- JWT
+- Cookies HTTPOnly
+- Docker
 
 ---
 
@@ -197,6 +243,7 @@ O projeto foi desenvolvido com HTML, CSS, JavaScript, Markdown, Docker e Nginx, 
 - Autenticação de usuários
 - Validação de dados no backend
 - Integração entre frontend e backend
+- Comunicação em tempo real com Socket.IO
 - Manipulação de banco de dados
 - Criação de models e relacionamentos
 - Controle de carrinho e pedidos

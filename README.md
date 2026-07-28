@@ -12,7 +12,7 @@ https://luizgustavo.ignum.com.br/
 
 ## Sobre o projeto
 
-Este projeto foi desenvolvido com **HTML, CSS, JavaScript, Markdown, Docker e Nginx**.
+Este projeto foi desenvolvido com **HTML, CSS, JavaScript, Markdown, Docker e Nginx** e apresenta três sistemas principais: LG Trambicagens, LG Chat e VendaFácil.
 
 A página principal apresenta minhas informações profissionais, tecnologias que utilizo, projetos desenvolvidos, formas de contato e recursos importantes para publicação de sites, como:
 
@@ -115,6 +115,46 @@ O projeto foi criado para simular uma loja virtual completa, com funcionalidades
 
 ---
 
+## LG Chat
+
+Aplicação de mensagens em tempo real desenvolvida com **React, Vite, TypeScript, Node.js, Express, Socket.IO, PostgreSQL, Sequelize e Zod**.
+
+O projeto foi criado para permitir comunicação instantânea entre usuários, com conversas privadas, grupos, envio de mídias, status e mecanismos de segurança no frontend e no backend.
+
+### Funcionalidades principais
+
+- Cadastro, login e verificação de email
+- Autenticação com cookies HTTPOnly e proteção CSRF
+- Conversas privadas e em grupo
+- Permissões de proprietário, administrador e membro
+- Mensagens em tempo real com Socket.IO
+- Envio de imagens, vídeos, áudios e anexos
+- Status com controle de visualizações
+- Mensagens favoritas e conversas arquivadas
+- Bloqueio de usuários
+- Paginação e marcação de mensagens como lidas
+- Reenvio de mensagens após falhas ou uso offline
+- Validação no backend com Zod
+- Rate limit e headers de segurança
+- Interface responsiva com React e Vite
+
+### Tecnologias usadas no projeto
+
+- React
+- Vite
+- TypeScript
+- Node.js
+- Express
+- Socket.IO
+- PostgreSQL
+- Sequelize
+- Zod
+- JWT
+- Cookies HTTPOnly
+- Docker
+
+---
+
 ## VendaFácil
 
 Sistema de gestão de vendas desenvolvido com **React, Next.js, TypeScript, Prisma, SQLite e Zod**.
@@ -202,6 +242,8 @@ Projeto criado para apresentar minhas habilidades, projetos e currículo profiss
 - Links externos com `rel="noopener noreferrer"`.
 - Melhoria das meta tags de compartilhamento com texto alternativo da imagem.
 - Google Analytics mantido com eventos personalizados.
+- Inclusão do projeto LG Chat com carrossel e galeria de cinco imagens.
+- Atualização das tecnologias para Vite, Socket.IO e PostgreSQL.
 
 ---
 
@@ -291,6 +333,13 @@ curriculo-luiz/
 ├── js/
 │   └── script.js
 └── img/
+    ├── Lgchat1.png
+    ├── Lgchat2.png
+    ├── Lgchat3.png
+    ├── Lgchat4.png
+    ├── Lgchat5.png
+    ├── lg-trambicagens-1.png
+    ├── lg-trambicagens-2.png
     ├── lg-trambicagens-3.png
     ├── lg-trambicagens-4.png
     ├── lg-trambicagens-5.png
