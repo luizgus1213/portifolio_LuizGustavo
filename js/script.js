@@ -79,28 +79,33 @@ const projetos = {
     imagens: [
       {
         src: "img/Lgchat1.png",
-        alt: "LG Chat - Captura de tela 1",
+        alt: "LG Chat - Login",
         nome: "Tela 1",
       },
       {
         src: "img/Lgchat2.png",
-        alt: "LG Chat - Captura de tela 2",
+        alt: "LG Chat - Cadastro",
         nome: "Tela 2",
       },
       {
         src: "img/Lgchat3.png",
-        alt: "LG Chat - Captura de tela 3",
+        alt: "LG Chat - Hero Page",
         nome: "Tela 3",
       },
       {
         src: "img/Lgchat4.png",
-        alt: "LG Chat - Captura de tela 4",
+        alt: "LG Chat - Funcionalidades",
         nome: "Tela 4",
       },
       {
         src: "img/Lgchat5.png",
-        alt: "LG Chat - Captura de tela 5",
+        alt: "LG Chat - Perfil",
         nome: "Tela 5",
+      },
+      {
+        src: "img/Lgchat6.png",
+        alt: "LG Chat - Configurações",
+        nome: "Tela 6",
       },
     ],
   },
