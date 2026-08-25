@@ -200,6 +200,40 @@ O projeto foi criado com foco em controlar vendas, produção, estoque e finance
 
 ---
 
+---
+
+## WL Transportes
+
+Site institucional desenvolvido para a WL Transportes, empresa do setor de transporte e logística.
+
+O projeto foi criado com foco em apresentar os serviços da empresa de forma profissional, facilitar o contato com clientes e fortalecer sua presença na internet.
+
+Site publicado:
+
+https://wltransportes.netlify.app/
+
+### Funcionalidades desenvolvidas
+
+- Site institucional profissional
+- Interface responsiva para celular, tablet e computador
+- Apresentação dos serviços da empresa
+- Informações de atendimento
+- Integração com WhatsApp
+- Botões de contato rápido
+- Estrutura organizada para navegação
+- SEO básico
+- Layout adaptativo
+- Publicação online com Netlify
+
+### Tecnologias usadas no projeto
+
+- HTML
+- CSS
+- JavaScript
+- Responsividade
+- SEO
+- Netlify
+
 ## Portfólio com Docker
 
 Portfólio profissional criado para apresentar minhas habilidades, projetos e currículo.
