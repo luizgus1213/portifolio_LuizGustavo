@@ -1218,237 +1218,197 @@ body.js-loaded .reveal {
 body.js-loaded .reveal.active {
   opacity: 1;
   transform: translateY(0);
-}
-/* =========================================
+} /* =========================================
    WL TRANSPORTES
 ========================================= */
 
 .project-wl {
-  align-items: stretch;
+  overflow: hidden;
 }
 
-/* remove a etiqueta automática "PROJETO" apenas do WL */
+/* Remove somente o selo "PROJETO" do WL */
 .project-wl .project-img::after {
-  display: none;
+  content: none !important;
+  display: none !important;
 }
 
+/* Área da imagem */
 .wl-project-img {
-  height: 100%;
-  min-height: 500px;
+  height: auto;
+  min-height: 0;
+
+  padding: 24px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  padding: 34px;
-
-  background:
-    radial-gradient(
-      circle at 20% 20%,
-      rgba(255, 107, 26, 0.16),
-      transparent 38%
-    ),
-    radial-gradient(
-      circle at 80% 80%,
-      rgba(56, 189, 248, 0.1),
-      transparent 38%
-    ),
-    #0c0c0c;
+  background: #101010;
+  overflow: hidden;
 }
 
+/* Link que envolve a imagem */
 .wl-image-link {
-  width: 100%;
+  position: relative;
+
   display: block;
-}
 
-.wl-browser {
-  width: 100%;
-
-  background: #080808;
-
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 16px;
-
-  overflow: hidden;
-
-  box-shadow:
-    0 25px 60px rgba(0, 0, 0, 0.55),
-    0 0 0 1px rgba(255, 107, 26, 0.05);
-
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    border-color 0.35s ease;
-}
-
-/* barra superior estilo navegador */
-.wl-browser-top {
-  height: 42px;
-
-  display: flex;
-  align-items: center;
-
-  gap: 7px;
-
-  padding: 0 13px;
-
-  background: #151515;
-
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.wl-browser-top > span {
-  width: 9px;
-  height: 9px;
-
-  border-radius: 50%;
-
-  background: rgba(255, 255, 255, 0.25);
-}
-
-.wl-browser-url {
-  flex: 1;
-
-  margin-left: 8px;
-
-  background: rgba(255, 255, 255, 0.06);
-
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 7px;
-
-  padding: 5px 10px;
-
-  color: #8f8f8f;
-
-  font-size: 10px;
-
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.wl-browser img {
   width: 100%;
   height: auto;
 
-  display: block;
+  overflow: hidden;
 
-  object-fit: contain;
-  object-position: top center;
+  border-radius: 16px;
 
   background: #050505;
 }
 
-/* hover */
-.wl-image-link:hover .wl-browser {
-  transform: translateY(-6px) scale(1.01);
+/* Imagem */
+.wl-image-link img {
+  display: block;
 
-  border-color: rgba(255, 107, 26, 0.55);
+  width: 100%;
+  height: auto;
 
-  box-shadow:
-    0 30px 70px rgba(0, 0, 0, 0.65),
-    0 0 35px rgba(255, 107, 26, 0.08);
+  max-height: 460px;
+
+  object-fit: contain;
+  object-position: center;
+
+  background: #050505;
+
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease;
+}
+
+/* Efeito sobre a imagem */
+.wl-hover {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0);
+
+  opacity: 0;
+
+  transition:
+    opacity 0.3s ease,
+    background 0.3s ease;
+}
+
+.wl-hover span {
+  padding: 11px 18px;
+
+  border-radius: 999px;
+
+  background: var(--orange);
+  color: white;
+
+  font-size: 14px;
+  font-weight: 900;
+
+  transform: translateY(8px);
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+
+  transition: transform 0.3s ease;
+}
+
+.wl-image-link:hover img {
+  transform: scale(1.02);
+  filter: brightness(0.72);
+}
+
+.wl-image-link:hover .wl-hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.wl-image-link:hover .wl-hover span {
+  transform: translateY(0);
 }
 
 /* =========================================
-   BOTÃO DO SITE
+   BOTÃO
 ========================================= */
 
 .wl-site-button {
   align-self: flex-start;
 
-  width: auto !important;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  gap: 10px;
+  width: auto !important;
 
-  margin-top: 26px;
+  margin-top: 20px;
 
-  padding: 12px 19px;
+  padding: 10px 16px;
 
-  border-radius: 12px;
+  border: 1px solid rgba(255, 107, 26, 0.4);
+  border-radius: 999px;
 
-  background: var(--orange);
+  background: rgba(255, 107, 26, 0.1);
 
-  color: #ffffff;
+  color: #ffd0b6;
 
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 900;
 
-  border: 1px solid var(--orange);
-
-  box-shadow: 0 10px 25px rgba(255, 107, 26, 0.18);
-
   transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    background 0.3s ease;
-}
-
-.wl-site-arrow {
-  font-size: 18px;
-
-  transition: transform 0.3s ease;
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .wl-site-button:hover {
+  background: var(--orange);
+  border-color: var(--orange);
+
+  color: #ffffff;
+
   transform: translateY(-3px);
-
-  background: #ff7b32;
-
-  box-shadow: 0 15px 35px rgba(255, 107, 26, 0.28);
-}
-
-.wl-site-button:hover .wl-site-arrow {
-  transform: translate(3px, -3px);
 }
 
 /* =========================================
-   RESPONSIVO
+   TABLET
 ========================================= */
 
 @media (max-width: 860px) {
   .wl-project-img {
-    min-height: auto;
     height: auto;
+    min-height: 0;
 
-    padding: 22px;
+    padding: 18px;
   }
 
-  .wl-browser {
-    max-width: 700px;
-  }
-
-  .wl-site-button {
-    width: auto !important;
-    align-self: flex-start;
+  .wl-image-link img {
+    max-height: none;
   }
 }
 
+/* =========================================
+   CELULAR
+========================================= */
+
 @media (max-width: 520px) {
   .wl-project-img {
-    padding: 14px;
+    padding: 12px;
   }
 
-  .wl-browser {
+  .wl-image-link {
     border-radius: 12px;
-  }
-
-  .wl-browser-top {
-    height: 34px;
-  }
-
-  .wl-browser-url {
-    font-size: 9px;
   }
 
   .wl-site-button {
     width: auto !important;
 
-    padding: 11px 16px;
+    padding: 10px 15px;
 
     font-size: 13px;
   }
