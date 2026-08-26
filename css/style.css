@@ -1413,3 +1413,71 @@ body.js-loaded .reveal.active {
     font-size: 13px;
   }
 }
+/* =========================================
+   CARREGAMENTO DAS IMAGENS
+========================================= */
+
+.project-img {
+  position: relative;
+}
+
+/* Skeleton enquanto a imagem carrega */
+.project-img.image-loading::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      100deg,
+      rgba(255, 255, 255, 0.03) 20%,
+      rgba(255, 255, 255, 0.1) 40%,
+      rgba(255, 255, 255, 0.03) 60%
+    ),
+    #101010;
+
+  background-size: 200% 100%;
+
+  animation: imageSkeleton 1.4s infinite linear;
+
+  pointer-events: none;
+}
+
+/* imagem começa invisível */
+.project-img img {
+  opacity: 0;
+
+  transition:
+    opacity 0.45s ease,
+    transform 0.35s ease,
+    filter 0.35s ease;
+}
+
+/* aparece suavemente */
+.project-img img.image-loaded {
+  opacity: 1;
+}
+
+@keyframes imageSkeleton {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  .project-img.image-loading::before {
+    animation: none;
+  }
+
+  .project-img img {
+    transition: none;
+  }
+}

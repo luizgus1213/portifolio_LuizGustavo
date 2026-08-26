@@ -171,13 +171,54 @@ document.addEventListener("DOMContentLoaded", () => {
   iniciarMenuMobile();
   iniciarDigitacao();
   iniciarReveal();
+  iniciarCarregamentoImagens();
   iniciarCarrosseis();
   montarGalerias();
   iniciarGaleria();
   iniciarLightbox();
   iniciarAnalyticsLinks();
 });
+function iniciarCarregamentoImagens() {
+  const containers = document.querySelectorAll(".project-img");
 
+  containers.forEach((container) => {
+    const imagens = container.querySelectorAll("img");
+
+    if (!imagens.length) return;
+
+    container.classList.add("image-loading");
+
+    let primeiraImagemCarregada = false;
+
+    imagens.forEach((imagem) => {
+      const finalizarCarregamento = () => {
+        imagem.classList.add("image-loaded");
+
+        if (!primeiraImagemCarregada) {
+          primeiraImagemCarregada = true;
+          container.classList.remove("image-loading");
+        }
+      };
+
+      if (imagem.complete && imagem.naturalWidth > 0) {
+        finalizarCarregamento();
+      } else {
+        imagem.addEventListener("load", finalizarCarregamento, {
+          once: true,
+        });
+
+        imagem.addEventListener(
+          "error",
+          () => {
+            imagem.classList.add("image-loaded");
+            container.classList.remove("image-loading");
+          },
+          { once: true },
+        );
+      }
+    });
+  });
+}
 function iniciarMenuMobile() {
   const menu = document.getElementById("menuPrincipal");
   const toggleButton = document.getElementById("menuToggle");
