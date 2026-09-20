@@ -234,6 +234,59 @@ https://wltransportes.netlify.app/
 - SEO
 - Netlify
 
+## Suíça
+
+Landing page responsiva sobre paisagens naturais da Suíça, desenvolvida somente com HTML e CSS.
+
+Site: https://luizgus1213.github.io/suica/  
+Repositório: https://github.com/luizgus1213/suica
+
+### Recursos desenvolvidos
+
+- Layout responsivo
+- CSS Grid e Flexbox
+- Hero visual e navegação por seções
+- Galeria de paisagens
+- Animações com `@keyframes`
+- Animações de entrada com `animation-timeline: view()` em navegadores compatíveis
+- Publicação com GitHub Pages
+
+### Tecnologias usadas no projeto
+
+- HTML5
+- CSS3
+- CSS Grid
+- Flexbox
+- GitHub Pages
+
+---
+
+## Techboard
+
+Landing page front-end criada para apresentar uma proposta visual de monitoramento de aplicações em tempo real.
+
+Site: https://luizgus1213.github.io/techboard/  
+Repositório: https://github.com/luizgus1213/techboard
+
+### Recursos desenvolvidos
+
+- Interface em HTML e CSS
+- Hero com chamada principal e CTA
+- Tipografias locais com `@font-face`
+- Composição visual em preto e roxo
+- Adaptação para diferentes tamanhos de tela
+- Publicação com GitHub Pages
+
+### Tecnologias usadas no projeto
+
+- HTML5
+- CSS3
+- Responsividade
+- `@font-face`
+- GitHub Pages
+
+---
+
 ## Portfólio com Docker
 
 Portfólio profissional criado para apresentar minhas habilidades, projetos e currículo.

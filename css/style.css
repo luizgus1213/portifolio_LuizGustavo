@@ -1233,6 +1233,140 @@ body.js-loaded .reveal.active {
 }
 
 /* Área da imagem */
+
+
+/* Projetos públicos com demonstração ao vivo */
+.project-live-preview {
+  position: relative;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 107, 26, 0.14), transparent 34%),
+    radial-gradient(circle at 80% 75%, rgba(56, 189, 248, 0.1), transparent 32%),
+    #0a0a0a;
+  isolation: isolate;
+}
+
+.project-live-preview iframe {
+  position: absolute;
+  inset: 0;
+  width: 200%;
+  height: 200%;
+  border: 0;
+  transform: scale(0.5);
+  transform-origin: top left;
+  pointer-events: none;
+  background: #0a0a0a;
+}
+
+.project-live-preview::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.48), transparent 42%);
+}
+
+.live-preview-badge,
+.live-preview-open {
+  position: absolute;
+  z-index: 4;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.live-preview-badge {
+  top: 18px;
+  right: 18px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.live-preview-open {
+  right: 18px;
+  bottom: 18px;
+  padding: 11px 15px;
+  border-radius: 999px;
+  transition: 0.25s ease;
+}
+
+.live-preview-open:hover {
+  background: var(--orange);
+  border-color: var(--orange);
+  transform: translateY(-2px);
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 11px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+  font-weight: 800;
+  transition: 0.25s ease;
+}
+
+.project-link:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+  transform: translateY(-2px);
+}
+
+.project-link-primary {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #ffffff;
+}
+
+.project-link-primary:hover {
+  color: #ffffff;
+  box-shadow: 0 12px 28px rgba(255, 107, 26, 0.22);
+}
+
+@media (max-width: 860px) {
+  .project-live-preview iframe {
+    width: 180%;
+    height: 180%;
+    transform: scale(0.5556);
+  }
+}
+
+@media (max-width: 520px) {
+  .project-links {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .project-link {
+    width: 100%;
+  }
+
+  .live-preview-badge {
+    top: 14px;
+    right: 14px;
+  }
+
+  .live-preview-open {
+    right: 14px;
+    bottom: 14px;
+  }
+}
+
 .wl-project-img {
   height: auto;
   min-height: 0;

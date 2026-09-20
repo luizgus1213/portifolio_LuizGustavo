@@ -13,6 +13,7 @@ const palavras = [
   "PostgreSQL",
   "SEO",
   "Docker",
+  "HTML & CSS",
 ];
 
 const projetos = {

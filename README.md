@@ -12,7 +12,7 @@ https://luizgustavo.ignum.com.br/
 
 ## Sobre o projeto
 
-Este projeto foi desenvolvido com **HTML, CSS, JavaScript, Markdown, Docker e Nginx** e apresenta três sistemas principais: LG Trambicagens, LG Chat e VendaFácil.
+Este projeto foi desenvolvido com **HTML, CSS, JavaScript, Markdown, Docker e Nginx** e reúne sistemas completos, projetos para clientes e projetos front-end publicados, incluindo LG Trambicagens, LG Chat, VendaFácil, WL Transportes, Suíça e Techboard.
 
 A página principal apresenta minhas informações profissionais, tecnologias que utilizo, projetos desenvolvidos, formas de contato e recursos importantes para publicação de sites, como:
 
@@ -206,6 +206,77 @@ O projeto tem como objetivo controlar vendas, produção, estoque e financeiro e
 
 ---
 
+## Suíça
+
+Landing page responsiva dedicada às paisagens naturais da Suíça, criada somente com **HTML e CSS**.
+
+Site publicado:
+
+```txt
+https://luizgus1213.github.io/suica/
+```
+
+Repositório:
+
+```txt
+https://github.com/luizgus1213/suica
+```
+
+### Recursos principais
+
+- Layout responsivo
+- CSS Grid e Flexbox
+- Hero visual e navegação por seções
+- Galeria de paisagens
+- Animações com `@keyframes`
+- Uso de `animation-timeline: view()` em navegadores compatíveis
+- Publicação com GitHub Pages
+
+### Tecnologias usadas
+
+- HTML5
+- CSS3
+- CSS Grid
+- Flexbox
+- GitHub Pages
+
+---
+
+## Techboard
+
+Landing page front-end criada para apresentar uma proposta de monitoramento de aplicações em tempo real.
+
+Site publicado:
+
+```txt
+https://luizgus1213.github.io/techboard/
+```
+
+Repositório:
+
+```txt
+https://github.com/luizgus1213/techboard
+```
+
+### Recursos principais
+
+- Interface em HTML e CSS
+- Hero com chamada principal e CTA
+- Tipografias locais com `@font-face`
+- Layout em preto e roxo
+- Adaptação para diferentes tamanhos de tela
+- Publicação com GitHub Pages
+
+### Tecnologias usadas
+
+- HTML5
+- CSS3
+- `@font-face`
+- Responsividade
+- GitHub Pages
+
+---
+
 ## Portfólio com Docker
 
 Projeto criado para apresentar minhas habilidades, projetos e currículo profissional.
@@ -243,6 +314,7 @@ Projeto criado para apresentar minhas habilidades, projetos e currículo profiss
 - Melhoria das meta tags de compartilhamento com texto alternativo da imagem.
 - Google Analytics mantido com eventos personalizados.
 - Inclusão do projeto LG Chat com carrossel e galeria de cinco imagens.
+- Inclusão dos projetos públicos Suíça e Techboard com prévia ao vivo, link para o site e link para o GitHub.
 - Atualização das tecnologias para Vite, Socket.IO e PostgreSQL.
 
 ---
